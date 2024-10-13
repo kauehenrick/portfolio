@@ -1,6 +1,7 @@
 import Header from "../components/Header";
 import { CarouselSize } from "@/components/CarouselSize";
 
+import computervectorImg from "../assets/computer_vector.svg";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Home() {
@@ -25,7 +26,7 @@ export default function Home() {
                             </a>
                         </div>
                     </div>
-                    <img src="./src/assets/computer_vector.svg" alt="Imagem gráfica de um computador" />
+                    <img src={computervectorImg} alt="Imagem gráfica de um computador" />
                 </section>
 
                 <CarouselSize />
