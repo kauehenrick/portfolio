@@ -13,6 +13,7 @@ export default {
   			'black-bg': '#1b1a1f',
   			'pink-primary': '#EF476F',
   			'white-primary': '#f9f6ee',
+			'gray-primary': '#2E2E2F',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {

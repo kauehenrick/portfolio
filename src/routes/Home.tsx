@@ -1,13 +1,28 @@
-import Header from "../components/Header";
 import { CarouselSize } from "@/components/CarouselSize";
 
+import brazilFlagImg from "../assets/brazil-flag.svg";
+import usaFlagImg from "../assets/usa-flag.svg";
+import khiconImg from "../assets/khicon.svg";
 import computervectorImg from "../assets/computer_vector.svg";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Home() {
     return (
         <>
-            <Header />
+            <header className='flex justify-between m-auto mt-2.5 md:w-7/12 px-5 py-2 backdrop-blur-xl border border-white border-opacity-5 rounded-xl sticky top-0 z-50'>
+                <img src={khiconImg} alt="logo Kauê Henrick" />
+
+                <nav className='flex items-center text-md gap-5'>
+                    <a href="#top">Início</a>
+                    <a href="#projects">Projetos</a>
+                    <a href="#contact">Contato</a>
+                </nav>
+
+                <div className="flex items-center gap-3">
+                    <img className="size-5 cursor-pointer" src={brazilFlagImg} alt="bandeira do brasil" />
+                    <img className="size-5 cursor-pointer" src={usaFlagImg} alt="bandeira dos estados unidos" />
+                </div>
+            </header>
 
             <main className="flex flex-col m-auto md:w-7/12 md:mt-20 md:gap-12">
                 <section className="md:flex md:space-x-10">
@@ -31,15 +46,21 @@ export default function Home() {
 
                 <CarouselSize />
 
-                <section className="flex flex-col">
+                <section className="flex flex-col" id="projects">
                     <p className="text-4xl font-bold">Projetos</p>
                     <p className="text-lg">Alguns dos projetos nos quais trabalhei, tanto pessoais quanto profissionais.</p>
 
                     <div className="mt-5 space-y-5">
-                    <div className="border border-white border-opacity-5 rounded-xl h-20"></div>
-                    <div className="border border-white border-opacity-5 rounded-xl h-20"></div>
-                    <div className="border border-white border-opacity-5 rounded-xl h-20"></div>
+                        <div className="border border-white border-opacity-5 rounded-xl h-20"></div>
+                        <div className="border border-white border-opacity-5 rounded-xl h-20"></div>
+                        <div className="border border-white border-opacity-5 rounded-xl h-20"></div>
                     </div>
+                </section>
+
+                <section id="contact">
+                    <p className="text-4xl font-bold">Contato</p>
+
+                    <div></div>
                 </section>
             </main>
         </>
