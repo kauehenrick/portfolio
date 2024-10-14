@@ -1,10 +1,14 @@
 import { CarouselSize } from "@/components/CarouselSize";
 
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import ContactForm from "@/components/ContactForm";
+import { ModeToggle } from "@/components/ui/mode-toggle";
+
 import brazilFlagImg from "../assets/brazil-flag.svg";
 import usaFlagImg from "../assets/usa-flag.svg";
 import khiconImg from "../assets/khicon.svg";
 import computervectorImg from "../assets/computer_vector.svg";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import savemoneyloginImg from "../assets/savemoney_1.png";
 
 export default function Home() {
     return (
@@ -18,9 +22,13 @@ export default function Home() {
                     <a href="#contact">Contato</a>
                 </nav>
 
-                <div className="flex items-center gap-3">
-                    <img className="size-5 cursor-pointer" src={brazilFlagImg} alt="bandeira do brasil" />
-                    <img className="size-5 cursor-pointer" src={usaFlagImg} alt="bandeira dos estados unidos" />
+                <div className="flex gap-7">
+                    <div className="flex items-center gap-3">
+                        <img className="size-5 cursor-pointer" src={brazilFlagImg} alt="bandeira do brasil" />
+                        <img className="size-5 cursor-pointer" src={usaFlagImg} alt="bandeira dos estados unidos" />
+                    </div>
+
+                    <ModeToggle />
                 </div>
             </header>
 
@@ -50,18 +58,28 @@ export default function Home() {
                     <p className="text-4xl font-bold">Projetos</p>
                     <p className="text-lg">Alguns dos projetos nos quais trabalhei, tanto pessoais quanto profissionais.</p>
 
-                    <div className="mt-5 space-y-5">
-                        <div className="border border-white border-opacity-5 rounded-xl h-20"></div>
-                        <div className="border border-white border-opacity-5 rounded-xl h-20"></div>
-                        <div className="border border-white border-opacity-5 rounded-xl h-20"></div>
+                    <div className="flex gap-5 mt-5 space-y-5">
+                        <img className="h-80 border border-white border-opacity-5 rounded-xl" src={savemoneyloginImg} alt="página dee login do save money" />
+
+                        <div className="border border-white border-opacity-5 rounded-xl w-3/6">
+                            <p className="font-semibold text-xl">SaveMoney</p>
+                        </div>
                     </div>
                 </section>
 
                 <section id="contact">
                     <p className="text-4xl font-bold">Contato</p>
 
-                    <div></div>
+                    <ContactForm />
                 </section>
+
+
+
+                <footer className="space-y-1 mb-5">
+                    <p className="font-semibold text-xl">Kauê Henrick</p>
+                    <p>Sítio Grande, Bahia, Brasil</p>
+                    <p>© kauehenrick, 2024</p>
+                </footer>
             </main>
         </>
     )

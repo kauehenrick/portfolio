@@ -56,7 +56,7 @@ export default {
   			}
   		},
   		fontFamily: {
-  			titillium: ['Titillium Web"', 'system-ui']
+  			titillium: ['"Titillium Web"', 'system-ui']
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
