@@ -8,7 +8,7 @@ import brazilFlagImg from "../assets/brazil-flag.svg";
 import usaFlagImg from "../assets/usa-flag.svg";
 import khiconImg from "../assets/khicon.svg";
 import computervectorImg from "../assets/computer_vector.svg";
-import savemoneyloginImg from "../assets/savemoney_1.png";
+import womenatwork from "../assets/women-at-work.jpeg";
 
 export default function Home() {
     return (
@@ -58,11 +58,11 @@ export default function Home() {
                     <p className="text-4xl font-bold">Projetos</p>
                     <p className="text-lg">Alguns dos projetos nos quais trabalhei, tanto pessoais quanto profissionais.</p>
 
-                    <div className="flex gap-5 mt-5 space-y-5">
-                        <img className="h-80 border border-white border-opacity-5 rounded-xl" src={savemoneyloginImg} alt="página dee login do save money" />
-
-                        <div className="border border-white border-opacity-5 rounded-xl w-3/6">
-                            <p className="font-semibold text-xl">SaveMoney</p>
+                    <div className="flex gap-5 mt-5">
+                        <img className="h-80 border border-white border-opacity-5 rounded-xl" src={womenatwork} alt="" />
+                        <div>
+                            <p className="font-semibold text-xl mt-2">Novidades em breve!</p>
+                            <p>Ainda estamos trabalhando nisso, logo mais tudo estará em seu devido lugar.</p>
                         </div>
                     </div>
                 </section>
