@@ -1,9 +1,11 @@
 "use client"
 
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-import { z } from "zod"
-import { Button } from "@/components/ui/button"
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import emailjs from '@emailjs/browser';
+
+import { Button } from "@/components/ui/button";
 import {
     Form,
     FormControl,
@@ -13,14 +15,14 @@ import {
     FormLabel,
     FormMessage,
 } from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
-
+import { Input } from "@/components/ui/input";
 import { Textarea } from "../ui/textarea"
 import asideImg from "../../assets/anniroenkae.jpg";
+import { toast } from "sonner";
 
 const formSchema = z.object({
-    name: z.string().min(2).max(50),
-    email: z.string().min(2),
+    user_name: z.string().min(2).max(50),
+    user_email: z.string().min(2),
     message: z.string()
 })
 
@@ -28,14 +30,28 @@ export default function ContactForm() {
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
-            name: "",
-            email: "",
+            user_name: "",
+            user_email: "",
             message: "",
         }
     })
 
     function onSubmit(values: z.infer<typeof formSchema>) {
-        console.log(values)
+        const templateParams = {
+            from_name: values.user_name,
+            from_email: values.user_email,
+            message: values.message,
+        };
+
+        emailjs
+            .send(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, templateParams, import.meta.env.VITE_PUBLIC_SERVICE_ID)
+            .then(() => {
+                toast.success("Email enviado com sucesso!");
+                form.reset();
+            })
+            .catch(err => {
+                toast.error("Erro ao enviar email!", err);
+            })
     }
 
     return (
@@ -46,7 +62,7 @@ export default function ContactForm() {
                 <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col space-y-8 w-2/6 ms-10 mt-5">
                     <FormField
                         control={form.control}
-                        name="name"
+                        name="user_name"
                         render={({ field }) => (
                             <FormItem>
                                 <FormLabel>Nome</FormLabel>
@@ -62,7 +78,7 @@ export default function ContactForm() {
 
                     <FormField
                         control={form.control}
-                        name="email"
+                        name="user_email"
                         render={({ field }) => (
                             <FormItem>
                                 <FormLabel>Email</FormLabel>

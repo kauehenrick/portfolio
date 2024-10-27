@@ -73,8 +73,6 @@ export default function Home() {
                     <ContactForm />
                 </section>
 
-
-
                 <footer className="space-y-1 mb-5">
                     <p className="font-semibold text-xl">Kauê Henrick</p>
                     <p>Sítio Grande, Bahia, Brasil</p>
