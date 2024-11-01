@@ -42,7 +42,7 @@ export function CarouselSize() {
     >
       <CarouselContent>
         {logos.map(logo => (
-          <CarouselItem key={logo} className="basis-1/7">
+          <CarouselItem key={logo} className="basis-1/5">
             <div className="p-1">
               <Card>
                 <CardContent className="flex aspect-square items-center justify-center p-6 bg-background/90">

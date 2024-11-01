@@ -1,4 +1,5 @@
 import { CarouselSize } from "@/components/CarouselSize";
+import { useState } from "react";
 
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import ContactForm from "@/components/ContactForm";
@@ -11,15 +12,37 @@ import computervectorImg from "../assets/computer_vector.svg";
 import womenatwork from "../assets/women-at-work.jpeg";
 
 export default function Home() {
+    const [activeLink, setActiveLink] = useState(window.location.hash || '#home');
+
+    const handleClick = (link: string) => {
+        setActiveLink(link);
+    };
+
+    const navbarItems = [
+        { name: "Início", src: "#top" },
+        { name: "Projetos", src: "#projects" },
+        { name: "Contato", src: "#contact" },
+    ]
+
     return (
         <>
             <header className='flex justify-between m-auto mt-2.5 md:w-7/12 px-5 py-2 backdrop-blur-xl border border-white border-opacity-5 rounded-xl sticky top-0 z-50'>
                 <img src={khiconImg} alt="logo Kauê Henrick" />
 
                 <nav className='flex items-center text-md gap-5'>
-                    <a href="#top">Início</a>
-                    <a href="#projects">Projetos</a>
-                    <a href="#contact">Contato</a>
+                    {navbarItems.map((item) => (
+                        <a
+                            key={item.src}
+                            href={item.src}
+                            className={`relative ${activeLink === item.src
+                                ? 'font-semibold after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-pink-primary'
+                                : 'hover:font-semibold'
+                                } after:transition-transform after:duration-300 after:scale-x-100`}
+                            onClick={() => handleClick(item.src)}
+                        >
+                            {item.name}
+                        </a>
+                    ))}
                 </nav>
 
                 <div className="flex gap-7">
