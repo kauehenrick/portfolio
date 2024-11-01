@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import emailjs from '@emailjs/browser';
+import { useTranslation } from "react-i18next";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -27,6 +28,8 @@ const formSchema = z.object({
 })
 
 export default function ContactForm() {
+    const { t } = useTranslation();
+
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -46,11 +49,11 @@ export default function ContactForm() {
         emailjs
             .send(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, templateParams, import.meta.env.VITE_PUBLIC_SERVICE_ID)
             .then(() => {
-                toast.success("Email enviado com sucesso!");
+                toast.success(t("contactForm.toast.sucess"));
                 form.reset();
             })
             .catch(err => {
-                toast.error("Erro ao enviar email!", err);
+                toast.error(t("contactForm.toast.error"), err);
             })
     }
 
@@ -65,9 +68,9 @@ export default function ContactForm() {
                         name="user_name"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Nome</FormLabel>
+                                <FormLabel>{t("contactForm.nameLabel")}</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="Seu nome" {...field} />
+                                    <Input placeholder={t("contactForm.namePlaceholder")} {...field} />
                                 </FormControl>
                                 <FormDescription>
                                 </FormDescription>
@@ -81,9 +84,9 @@ export default function ContactForm() {
                         name="user_email"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Email</FormLabel>
+                                <FormLabel>{t("contactForm.emailLabel")}</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="email@email.com" type="email" {...field} />
+                                    <Input placeholder={t("contactForm.emailPlaceholder")} type="email" {...field} />
                                 </FormControl>
                                 <FormDescription>
                                 </FormDescription>
@@ -97,9 +100,9 @@ export default function ContactForm() {
                         name="message"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Mensagem</FormLabel>
+                                <FormLabel>{t("contactForm.messageLabel")}</FormLabel>
                                 <FormControl>
-                                    <Textarea placeholder="Escreva aqui sua mensagem..." {...field} />
+                                    <Textarea placeholder={t("contactForm.messagePlaceholder")} {...field} />
                                 </FormControl>
                                 <FormDescription>
                                 </FormDescription>
@@ -107,7 +110,7 @@ export default function ContactForm() {
                             </FormItem>
                         )}
                     />
-                    <Button type="submit">Enviar</Button>
+                    <Button type="submit">{t("contactForm.submitButton")}</Button>
                 </form>
             </Form>
         </div>

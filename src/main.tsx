@@ -7,6 +7,7 @@ import {
 import "./index.css";
 import { ThemeProvider } from "./components/ui/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
+import "../Translation/i18n";
 
 import Home from "./routes/Home";
 

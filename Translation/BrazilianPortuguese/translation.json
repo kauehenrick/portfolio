@@ -1,0 +1,28 @@
+{
+  "navbarItems": {
+    "home": "Início",
+    "projects": "Projetos",
+    "contact": "Contato"
+  },
+  "greetingsHeader": "Olá, meu nome é",
+  "jobDescription": "Desenvolvedor Web",
+  "greetingsDescription": "É um prazer te ter aqui, seja bem vindo(a) ao meu portfólio",
+  "projectDescription": "Alguns dos projetos nos quais trabalhei, tanto pessoais quanto profissionais",
+  "tempProject": {
+    "header": "Novidades em breve!",
+    "description": "Ainda estamos trabalhando nisso, logo mais tudo estará em seu devido lugar"
+  },
+  "contactForm": {
+    "nameLabel": "Nome",
+    "namePlaceholder": "Seu nome",
+    "emailLabel": "Email",
+    "emailPlaceholder": "email@email.com",
+    "messageLabel": "Mensagem",
+    "messagePlaceholder": "Escreva aqui sua mensagem...",
+    "submitButton": "Enviar",
+    "toast": {
+      "sucess": "Email enviado com sucesso!",
+      "error": "Erro ao enviar email!"
+    }
+  }
+}

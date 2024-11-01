@@ -1,5 +1,6 @@
 import { CarouselSize } from "@/components/CarouselSize";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import ContactForm from "@/components/ContactForm";
@@ -18,10 +19,16 @@ export default function Home() {
         setActiveLink(link);
     };
 
+    const { t, i18n } = useTranslation();
+
+    const handleChangeLanguage = (language: string) => {
+        i18n.changeLanguage(language);
+    }
+
     const navbarItems = [
-        { name: "Início", src: "#top" },
-        { name: "Projetos", src: "#projects" },
-        { name: "Contato", src: "#contact" },
+        { name: t("navbarItems.home"), src: "#top" },
+        { name: t("navbarItems.projects"), src: "#projects" },
+        { name: t("navbarItems.contact"), src: "#contact" },
     ]
 
     return (
@@ -47,8 +54,8 @@ export default function Home() {
 
                 <div className="flex gap-7">
                     <div className="flex items-center gap-3">
-                        <img className="size-5 cursor-pointer" src={brazilFlagImg} alt="bandeira do brasil" />
-                        <img className="size-5 cursor-pointer" src={usaFlagImg} alt="bandeira dos estados unidos" />
+                        <img className="size-5 cursor-pointer" src={brazilFlagImg} alt="bandeira do brasil" onClick={() => handleChangeLanguage("br")} />
+                        <img className="size-5 cursor-pointer" src={usaFlagImg} alt="bandeira dos estados unidos" onClick={() => handleChangeLanguage("en")} />
                     </div>
 
                     <ModeToggle />
@@ -58,9 +65,9 @@ export default function Home() {
             <main className="flex flex-col m-auto md:w-7/12 md:mt-20 md:gap-12">
                 <section className="md:flex md:space-x-10">
                     <div className="space-y-5">
-                        <p className="text-5xl">Olá, me chamo <br /> <span className="text-pink-primary font-bold">Kauê Henrick</span>!</p>
-                        <p className="text-xl font-titillium">&lt; Desenvolvedor Web /&gt;</p>
-                        <p className="text-xl">É um prazer te ter aqui, seja bem vindo(a) ao meu portfólio.</p>
+                        <p className="text-5xl">{t("greetingsHeader")} <br /> <span className="text-pink-primary font-bold">Kauê Henrick</span>!</p>
+                        <p className="text-xl font-titillium">&lt; {t("jobDescription")} /&gt;</p>
+                        <p className="text-xl">{t("greetingsDescription")}</p>
                         <div className="flex space-x-7">
                             <a className="flex items-center cursor-pointer gap-2" href="https://github.com/kauehenrick" target="blank_">
                                 <FaGithub size={'30px'} color="#EF476F" />
@@ -78,20 +85,20 @@ export default function Home() {
                 <CarouselSize />
 
                 <section className="flex flex-col" id="projects">
-                    <p className="text-4xl font-bold">Projetos</p>
-                    <p className="text-lg">Alguns dos projetos nos quais trabalhei, tanto pessoais quanto profissionais.</p>
+                    <p className="text-4xl font-bold">{t("navbarItems.projects")}</p>
+                    <p className="text-lg">{t("projectDescription")}</p>
 
                     <div className="flex gap-5 mt-5">
                         <img className="h-80 border border-white border-opacity-5 rounded-xl" src={womenatwork} alt="" />
                         <div>
-                            <p className="font-semibold text-xl mt-2">Novidades em breve!</p>
-                            <p>Ainda estamos trabalhando nisso, logo mais tudo estará em seu devido lugar.</p>
+                            <p className="font-semibold text-xl mt-2">{t("tempProject.header")}</p>
+                            <p>{t("tempProject.description")}</p>
                         </div>
                     </div>
                 </section>
 
                 <section id="contact">
-                    <p className="text-4xl font-bold">Contato</p>
+                    <p className="text-4xl font-bold">{t("navbarItems.contact")}</p>
 
                     <ContactForm />
                 </section>

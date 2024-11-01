@@ -1,0 +1,28 @@
+{
+  "navbarItems": {
+    "home": "Home",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "greetingsHeader": "Hello, call me",
+  "jobDescription": "Web Developer",
+  "greetingsDescription": "Nice to see you here, welcome to my portfolio",
+  "projectDescription": "Some of the projects I have already worked on, including both practice and professional projects.",
+  "tempProject": {
+    "header": "New updates coming soon!",
+    "description": "Still working on this, soon everything will be on the right place"
+  },
+  "contactForm": {
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "email@email.com",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Write your message here...",
+    "submitButton": "Send",
+    "toast": {
+      "sucess": "Mail send!",
+      "error": "Couldn't send mail!"
+    }
+  }
+}
