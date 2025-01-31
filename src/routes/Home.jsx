@@ -1,4 +1,4 @@
-import headerLogoImg from "../assets/header-logo.svg";
+import headerLogoImg from "../assets/header-logo.png";
 import kauePictureImg from "../assets/kaue-picture.jpg";
 import typescriptLogoImg from "../assets/typescript.png";
 import figmaLogoImg from "../assets/figma.png";
@@ -6,16 +6,20 @@ import nodejsLogoImg from "../assets/nodejs.png";
 import reactjsLogoImg from "../assets/reactjs.png";
 import tailwindLogoImg from "../assets/tailwindcss.png";
 import postgresqlLogoImg from "../assets/postgresql.png";
-import brasilLogo from "../assets/brasil.png";
-import euaLogo from "../assets/usa.png";
-import { FaGithub, FaLinkedin } from "react-icons/fa6";
+import brasilLogoImg from "../assets/brasil.png";
+import euaLogoImg from "../assets/usa.png";
+import sunLogoImg from "../assets/sol.png";
+import contactImg from "../assets/contact-image.jpeg";
+import { FaGithub, FaLinkedin, FaFile } from "react-icons/fa6";
 import SkillItem from "../components/SkillItem";
+import ContactForm from "../components/ContactForm";
+import ProjectsSection from "../components/ProjectsSection";
 
 export default function Home() {
   return (
     <>
-      <header className="flex items-center justify-between mx-8 mt-4">
-        <img src={headerLogoImg} alt="logo Kauê Henrick" />
+      <header className="bg-primary-black fixed top-0 w-full flex items-center justify-between px-8 py-4 drop-shadow-lg">
+        <img src={headerLogoImg} alt="logo Kauê Henrick" className="h-9" />
 
         <div className="flex gap-8">
           <nav>
@@ -27,15 +31,17 @@ export default function Home() {
             </ul>
           </nav>
 
-          <div className="flex gap-4">
-            <img src={brasilLogo} alt="Logo do Brasil" />
-            <img src={euaLogo} alt="Logo dos EUA" />
+          <div className="flex items-center gap-4">
+            <img src={brasilLogoImg} alt="Logo do Brasil" className="h-5 cursor-pointer" />
+            <img src={euaLogoImg} alt="Logo dos EUA" className="h-5 cursor-pointer" />
           </div>
+
+          <img src={sunLogoImg} alt="Ícone do Sol" className="h-6 cursor-pointer" />
         </div>
       </header>
 
-      <main className="space-y-12 my-4">
-        <section className="bg-primary-gray bg-cover flex items-center justify-center gap-13 h-[700px]">
+      <main className="my-4">
+        <section className="bg-primary-gray flex items-center justify-center gap-13 h-[700px]">
           <div className="space-y-4">
             <p className="font-extrabold text-4xl">Olá, me chamo Kauê Henrick <br /> <span className="text-primary-pink">Desenvolvedor Web</span></p>
             <p>Focado em entregar páginas com designs <br /> atraentes e eficientes, visando proporcionar uma <br /> excelente experiência para o cliente final.</p>
@@ -43,12 +49,16 @@ export default function Home() {
               <a href="https://github.com/kauehenrick" target="_blank" className="cursor-pointer"><FaGithub size="30px" /></a>
               <a href="https://www.linkedin.com/in/kauehenrick/" target="_blank" className="cursor-pointer"><FaLinkedin size="30px" /></a>
             </div>
+            <button className="bg-primary-pink flex items-center gap-2 rounded-lg p-3 cursor-pointer hover:bg-primary-pink/85">
+              <FaFile />
+              <p>Currículo</p>
+            </button>
           </div>
           <img src={kauePictureImg} alt="Foto Kauê" className="h-[300px] rounded-r-2xl" />
         </section>
 
-        <section className="flex flex-col items-center justify-center gap-y-8">
-          <p className="font-extrabold text-4xl">Principais <span className="text-primary-pink">Ferramentas</span></p>
+        <section className="flex flex-col items-center justify-center py-15 gap-y-8">
+          <h2 className="font-extrabold text-4xl">Principais <span className="text-primary-pink">Ferramentas</span></h2>
 
           <div className="grid grid-flow-col grid-cols-2 gap-13">
             <div className="space-y-8">
@@ -64,12 +74,20 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="flex flex-col items-center justify-center">
-          <p className="font-extrabold text-4xl">Vamos Trabalhar <span className="text-primary-pink">Juntos</span></p>
+        <ProjectsSection />
+
+        <section className="flex flex-col items-center justify-center py-15 gap-y-8">
+          <h2 className="font-extrabold text-4xl">Vamos Trabalhar <span className="text-primary-pink">Juntos</span></h2>
+
+          <div className="flex items-center gap-13">
+            <img src={contactImg} alt="" className="h-[320px] rounded-l-2xl" />
+            <ContactForm />
+          </div>
         </section>
       </main>
 
-      <footer className="bg-primary-pink h-18">
+      <footer className="bg-primary-pink h-12 flex">
+        <p className="m-auto">Feito com ❤︎ por Kauê Henrick</p>
 
       </footer>
     </>
