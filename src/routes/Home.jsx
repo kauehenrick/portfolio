@@ -79,6 +79,8 @@ export default function Home() {
         <section className="flex flex-col items-center justify-center py-15 gap-y-8">
           <h2 className="font-extrabold text-4xl">Vamos Trabalhar <span className="text-primary-pink">Juntos</span></h2>
 
+          <p className="text-center">Caso queira conhecer mais sobre o meu trabalho ou sobre mim, talvez apenas mandar um &ldquo;alô&ldquo;, me mande uma mensagem. <br /> Estou esperando por você!</p>
+
           <div className="flex items-center gap-13">
             <img src={contactImg} alt="" className="h-[320px] rounded-l-2xl" />
             <ContactForm />
