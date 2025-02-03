@@ -10,7 +10,7 @@ import brasilLogoImg from "../assets/brasil.png";
 import euaLogoImg from "../assets/usa.png";
 import sunLogoImg from "../assets/sol.png";
 import contactImg from "../assets/contact-image.jpeg";
-import { FaGithub, FaLinkedin, FaFile } from "react-icons/fa6";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import SkillItem from "../components/SkillItem";
 import ContactForm from "../components/ContactForm";
 import ProjectsSection from "../components/ProjectsSection";
@@ -18,7 +18,7 @@ import ProjectsSection from "../components/ProjectsSection";
 export default function Home() {
   return (
     <>
-      <header className="bg-primary-black fixed top-0 w-full flex items-center justify-between px-8 py-4 drop-shadow-lg">
+      <header className="bg-primary-black fixed top-0 z-10 w-full flex items-center justify-between px-8 py-4 drop-shadow-lg">
         <img src={headerLogoImg} alt="logo Kauê Henrick" className="h-9" />
 
         <div className="flex gap-8">
@@ -49,10 +49,6 @@ export default function Home() {
               <a href="https://github.com/kauehenrick" target="_blank" className="cursor-pointer"><FaGithub size="30px" /></a>
               <a href="https://www.linkedin.com/in/kauehenrick/" target="_blank" className="cursor-pointer"><FaLinkedin size="30px" /></a>
             </div>
-            <button className="bg-primary-pink flex items-center gap-2 rounded-lg p-3 cursor-pointer hover:bg-primary-pink/85">
-              <FaFile />
-              <p>Currículo</p>
-            </button>
           </div>
           <img src={kauePictureImg} alt="Foto Kauê" className="h-[300px] rounded-r-2xl" />
         </section>
