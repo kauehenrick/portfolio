@@ -24,10 +24,10 @@ export default function Home() {
         <div className="flex gap-8">
           <nav>
             <ul className="flex gap-9">
-              <li><a href="">Início</a></li>
-              <li><a href="">Sobre</a></li>
-              <li><a href="">Projetos</a></li>
-              <li><a href="">Contato</a></li>
+              <li><a href="#">Início</a></li>
+              <li><a href="#ferramentas">Ferramentas</a></li>
+              <li><a href="#projetos">Projetos</a></li>
+              <li><a href="#contato">Contato</a></li>
             </ul>
           </nav>
 
@@ -53,7 +53,7 @@ export default function Home() {
           <img src={kauePictureImg} alt="Foto Kauê" className="h-[300px] rounded-r-2xl" />
         </section>
 
-        <section className="flex flex-col items-center justify-center py-15 gap-y-8">
+        <section id="ferramentas" className="flex flex-col items-center justify-center py-15 gap-y-8">
           <h2 className="font-extrabold text-4xl">Principais <span className="text-primary-pink">Ferramentas</span></h2>
 
           <div className="grid grid-flow-col grid-cols-2 gap-13">
@@ -70,9 +70,11 @@ export default function Home() {
           </div>
         </section>
 
-        <ProjectsSection />
+        <section id="projetos">
+          <ProjectsSection />
+        </section>
 
-        <section className="flex flex-col items-center justify-center py-15 gap-y-8">
+        <section id="contato" className="flex flex-col items-center justify-center py-15 gap-y-8">
           <h2 className="font-extrabold text-4xl">Vamos Trabalhar <span className="text-primary-pink">Juntos</span></h2>
 
           <p className="text-center">Caso queira conhecer mais sobre o meu trabalho ou sobre mim, talvez apenas mandar um &ldquo;alô&ldquo;, me mande uma mensagem. <br /> Estou esperando por você!</p>
