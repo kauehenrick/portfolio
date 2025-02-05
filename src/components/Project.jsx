@@ -23,7 +23,7 @@ export default function Project({ ProjectTitle, ProjectSubtitle, ProjectDescript
           }))}
         </div>
 
-        <footer className="flex flex-row-reverse justify-between items-center text-sm mt-9">
+        <footer className="flex flex-row-reverse justify-between items-center text-sm mt-11">
           {SeeMoreLink
             ? <a className="flex items-center gap-2 cursor-pointer" href={SeeMoreLink} target="blank">
               <p>Ver mais</p>

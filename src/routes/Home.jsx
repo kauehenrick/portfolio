@@ -1,21 +1,28 @@
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
+import brasilLogoImg from "../assets/brasil.png";
+import contactImg from "../assets/contact-image.jpeg";
+import figmaLogoImg from "../assets/figma.png";
 import headerLogoImg from "../assets/header-logo.png";
 import kauePictureImg from "../assets/kaue-picture.jpg";
-import typescriptLogoImg from "../assets/typescript.png";
-import figmaLogoImg from "../assets/figma.png";
 import nodejsLogoImg from "../assets/nodejs.png";
-import reactjsLogoImg from "../assets/reactjs.png";
-import tailwindLogoImg from "../assets/tailwindcss.png";
 import postgresqlLogoImg from "../assets/postgresql.png";
-import brasilLogoImg from "../assets/brasil.png";
-import euaLogoImg from "../assets/usa.png";
+import reactjsLogoImg from "../assets/reactjs.png";
 import sunLogoImg from "../assets/sol.png";
-import contactImg from "../assets/contact-image.jpeg";
-import { FaGithub, FaLinkedin } from "react-icons/fa6";
-import SkillItem from "../components/SkillItem";
+import tailwindLogoImg from "../assets/tailwindcss.png";
+import typescriptLogoImg from "../assets/typescript.png";
+import euaLogoImg from "../assets/usa.png";
 import ContactForm from "../components/ContactForm";
 import ProjectsSection from "../components/ProjectsSection";
+import SkillItem from "../components/SkillItem";
+import { useState } from "react";
 
 export default function Home() {
+  const [selectedLink, setSelectedLink] = useState("inicio");
+
+  const handleClick = (link) => {
+    setSelectedLink(link);
+  };
+
   return (
     <>
       <header className="bg-primary-black fixed top-0 z-10 w-full flex items-center justify-between px-8 py-4 drop-shadow-lg">
@@ -23,11 +30,51 @@ export default function Home() {
 
         <div className="flex gap-8">
           <nav>
-            <ul className="flex gap-9">
-              <li><a href="#">Início</a></li>
-              <li><a href="#ferramentas">Ferramentas</a></li>
-              <li><a href="#projetos">Projetos</a></li>
-              <li><a href="#contato">Contato</a></li>
+            <ul className="flex gap-5">
+              <li
+                className={`hover:text-white transition-colors relative ${selectedLink === 'inicio' ? 'text-primary-white' : 'text-gray-400'
+                  }`}
+              >
+                <a href="#" onClick={() => handleClick('inicio')}>
+                  Início
+                </a>
+                {selectedLink === 'inicio' && (
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 rounded-full bg-primary-pink"></span>
+                )}
+              </li>
+              <li
+                className={`hover:text-white transition-colors relative ${selectedLink === 'ferramentas' ? 'text-primary-white' : 'text-gray-400'
+                  }`}
+              >
+                <a href="#ferramentas" onClick={() => handleClick('ferramentas')}>
+                  Ferramentas
+                </a>
+                {selectedLink === 'ferramentas' && (
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 rounded-full bg-primary-pink"></span>
+                )}
+              </li>
+              <li
+                className={`hover:text-white transition-colors relative ${selectedLink === 'projetos' ? 'text-primary-white' : 'text-gray-400'
+                  }`}
+              >
+                <a href="#projetos" onClick={() => handleClick('projetos')}>
+                  Projetos
+                </a>
+                {selectedLink === 'projetos' && (
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 rounded-full bg-primary-pink"></span>
+                )}
+              </li>
+              <li
+                className={`hover:text-white transition-colors relative ${selectedLink === 'contato' ? 'text-primary-white' : 'text-gray-400'
+                  }`}
+              >
+                <a href="#contato" onClick={() => handleClick('contato')}>
+                  Contato
+                </a>
+                {selectedLink === 'contato' && (
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 rounded-full bg-primary-pink"></span>
+                )}
+              </li>
             </ul>
           </nav>
 
@@ -88,7 +135,6 @@ export default function Home() {
 
       <footer className="bg-primary-pink h-12 flex">
         <p className="m-auto">Feito com ❤︎ por Kauê Henrick</p>
-
       </footer>
     </>
   )
