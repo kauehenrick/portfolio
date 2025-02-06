@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaRegSun, FaRegMoon } from "react-icons/fa6";
 import brasilLogoImg from "../assets/brasil.png";
 import contactImg from "../assets/contact-image.jpeg";
 import figmaLogoImg from "../assets/figma.png";
@@ -7,7 +7,6 @@ import kauePictureImg from "../assets/kaue-picture.jpg";
 import nodejsLogoImg from "../assets/nodejs.png";
 import postgresqlLogoImg from "../assets/postgresql.png";
 import reactjsLogoImg from "../assets/reactjs.png";
-import sunLogoImg from "../assets/sol.png";
 import tailwindLogoImg from "../assets/tailwindcss.png";
 import typescriptLogoImg from "../assets/typescript.png";
 import euaLogoImg from "../assets/usa.png";
@@ -53,7 +52,7 @@ export default function Home() {
                   <span className="absolute bottom-0 left-0 w-full h-0.5 rounded-full bg-primary-pink"></span>
                 )}
               </li>
-              <li
+              {/*<li
                 className={`hover:text-white transition-colors relative ${selectedLink === 'projetos' ? 'text-primary-white' : 'text-gray-400'
                   }`}
               >
@@ -63,7 +62,7 @@ export default function Home() {
                 {selectedLink === 'projetos' && (
                   <span className="absolute bottom-0 left-0 w-full h-0.5 rounded-full bg-primary-pink"></span>
                 )}
-              </li>
+              </li>*/}
               <li
                 className={`hover:text-white transition-colors relative ${selectedLink === 'contato' ? 'text-primary-white' : 'text-gray-400'
                   }`}
@@ -78,12 +77,16 @@ export default function Home() {
             </ul>
           </nav>
 
-          <div className="flex items-center gap-4">
-            <img src={brasilLogoImg} alt="Logo do Brasil" className="h-5 cursor-pointer" />
-            <img src={euaLogoImg} alt="Logo dos EUA" className="h-5 cursor-pointer" />
+          <div className="flex items-center gap-5 cursor-pointer">
+            <img src={brasilLogoImg} alt="Logo do Brasil" className="h-4 cursor-pointer" />
+            <img src={euaLogoImg} alt="Logo dos EUA" className="h-4 cursor-pointer" />
           </div>
 
-          <img src={sunLogoImg} alt="Ícone do Sol" className="h-6 cursor-pointer" />
+          <div className="flex items-center gap-5 cursor-pointer">
+            <FaRegSun size="15px" />
+
+            <FaRegMoon size="15px" />
+          </div>
         </div>
       </header>
 
@@ -92,11 +95,19 @@ export default function Home() {
           <div className="space-y-4">
             <p className="font-extrabold text-4xl">Olá, me chamo Kauê Henrick <br /> <span className="text-primary-pink">Desenvolvedor Web</span></p>
             <p>Focado em entregar páginas com designs <br /> atraentes e eficientes, visando proporcionar uma <br /> excelente experiência para o cliente final.</p>
-            <div className="flex text-primary-pink gap-4">
-              <a href="https://github.com/kauehenrick" target="_blank" className="cursor-pointer"><FaGithub size="30px" /></a>
-              <a href="https://www.linkedin.com/in/kauehenrick/" target="_blank" className="cursor-pointer"><FaLinkedin size="30px" /></a>
+
+            <div className="flex text-primary-pink gap-7">
+              <a href="https://github.com/kauehenrick" target="blank" className="cursor-pointer flex items-center gap-2 font-medium">
+                <FaGithub size="20px" />
+                <p>Github</p>
+              </a>
+              <a href="https://www.linkedin.com/in/kauehenrick/" target="blank" className="cursor-pointer flex items-center gap-2 font-medium">
+                <FaLinkedin size="20px" />
+                <p>LinkedIn</p>
+              </a>
             </div>
           </div>
+
           <img src={kauePictureImg} alt="Foto Kauê" className="h-[300px] rounded-r-2xl" />
         </section>
 
@@ -117,9 +128,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="projetos">
+        {/*<section id="projetos">
           <ProjectsSection />
-        </section>
+        </section>*/}
 
         <section id="contato" className="flex flex-col items-center justify-center py-15 gap-y-8">
           <h2 className="font-extrabold text-4xl">Vamos Trabalhar <span className="text-primary-pink">Juntos</span></h2>
