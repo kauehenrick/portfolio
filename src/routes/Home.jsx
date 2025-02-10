@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaRegSun, FaRegMoon } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaRegSun, FaRegMoon, FaInstagram } from "react-icons/fa6";
 import brasilLogoImg from "../assets/brasil.png";
 import contactImg from "../assets/contact-image.jpeg";
 import figmaLogoImg from "../assets/figma.png";
@@ -11,7 +11,6 @@ import tailwindLogoImg from "../assets/tailwindcss.png";
 import typescriptLogoImg from "../assets/typescript.png";
 import euaLogoImg from "../assets/usa.png";
 import ContactForm from "../components/ContactForm";
-import ProjectsSection from "../components/ProjectsSection";
 import SkillItem from "../components/SkillItem";
 import { useState } from "react";
 
@@ -77,15 +76,15 @@ export default function Home() {
             </ul>
           </nav>
 
-          <div className="flex items-center gap-5 cursor-pointer">
+          <div className="flex items-center gap-5">
             <img src={brasilLogoImg} alt="Logo do Brasil" className="h-4 cursor-pointer" />
             <img src={euaLogoImg} alt="Logo dos EUA" className="h-4 cursor-pointer" />
           </div>
 
-          <div className="flex items-center gap-5 cursor-pointer">
-            <FaRegSun size="15px" />
+          <div className="flex items-center gap-5">
+            <FaRegSun className="cursor-pointer" size="15px" />
 
-            <FaRegMoon size="15px" />
+            <FaRegMoon className="cursor-pointer" size="15px" />
           </div>
         </div>
       </header>
@@ -97,11 +96,11 @@ export default function Home() {
             <p>Focado em entregar páginas com designs <br /> atraentes e eficientes, visando proporcionar uma <br /> excelente experiência para o cliente final.</p>
 
             <div className="flex text-primary-pink gap-7">
-              <a href="https://github.com/kauehenrick" target="blank" className="cursor-pointer flex items-center gap-2 font-medium">
+              <a href="https://github.com/kauehenrick" target="blank" className="flex items-center gap-2 font-medium">
                 <FaGithub size="20px" />
                 <p>Github</p>
               </a>
-              <a href="https://www.linkedin.com/in/kauehenrick/" target="blank" className="cursor-pointer flex items-center gap-2 font-medium">
+              <a href="https://www.linkedin.com/in/kauehenrick/" target="blank" className="flex items-center gap-2 font-medium">
                 <FaLinkedin size="20px" />
                 <p>LinkedIn</p>
               </a>
@@ -144,8 +143,10 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="bg-primary-pink h-12 flex">
-        <p className="m-auto">Feito com ❤︎ por Kauê Henrick</p>
+      <footer className="bg-primary-pink h-12 flex items-center justify-center gap-3 text-xl">
+        <a href="https://github.com/kauehenrick" target="blank"><FaGithub /></a>
+        <a href="https://www.linkedin.com/in/kauehenrick/" target="blank"><FaLinkedin /></a>
+        <a href="https://www.instagram.com/kaue.weber/" target="blank"><FaInstagram /></a>
       </footer>
     </>
   )
