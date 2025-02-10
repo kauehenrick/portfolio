@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import './index.css'
 import { Toaster } from 'sonner';
 import Home from './routes/Home';
+import './i18n';
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>

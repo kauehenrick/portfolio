@@ -4,7 +4,8 @@
 @theme {
   --color-primary-pink: #ef476f;
   --color-primary-black: #1b1a1f;
-  --color-primary-white: #f9f6ee;
+  --color-primary-white: #fbfbfb;
+  --color-secondary-white: #f5fffa;
   --color-primary-gray: #1d1c1f;
   --color-gray-border: #d9d9d9;
 }
@@ -18,8 +19,6 @@ html {
 }
 
 body {
-  background-color: #1b1a1f;
-  color: #ffffff;
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
   display: flex;
