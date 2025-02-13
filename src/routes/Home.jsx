@@ -63,6 +63,7 @@ export default function Home() {
                   <span className="absolute bottom-0 left-0 w-full h-0.5 rounded-full bg-primary-pink"></span>
                 )}
               </li>*/}
+
               <li
                 className={`hover:text-black dark:hover:text-white transition-colors relative ${selectedLink === 'contato' ? 'dark:text-primary-white' : 'text-gray-400'
                   }`}
@@ -86,7 +87,7 @@ export default function Home() {
       </header>
 
       <main className="dark:text-primary-white">
-        <section className="bg-secondary-white dark:bg-primary-gray flex items-center justify-center h-[700px] gap-10">
+        <section className="bg-secondary-white dark:bg-primary-gray flex flex-col md:flex-row items-center justify-center h-[700px] gap-10">
           <div className="space-y-4 w-[550px]">
             <p className="font-extrabold text-4xl"> <Translator path="main.greetings" /> <br /> <span className="text-primary-pink"> <Translator path="main.title" /> </span></p>
             <p className="w-136"> <Translator path="main.description" /> </p>
@@ -132,8 +133,8 @@ export default function Home() {
 
           <p className="text-center"> <Translator path="main.contact.description1" /> <br /> <Translator path="main.contact.description2" /> </p>
 
-          <div className="flex items-center gap-13">
-            <img src={contactImg} alt="" className="h-[320px] rounded-l-2xl" />
+          <div className="flex flex-col md:flex-row items-center gap-13">
+            <img src={contactImg} alt="" className="h-[320px] max-sm:rounded-t-2xl md:rounded-l-2xl" />
             <ContactForm />
           </div>
         </section>
