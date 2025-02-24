@@ -3,7 +3,7 @@ import React from "react";
 import contactImg from "../assets/contact-image.jpeg";
 import figmaLogoImg from "../assets/figma.png";
 import headerLogoImg from "../assets/header-logo.png";
-import ComputerVectorImg from "../assets/computer_vector.png";
+import ComputerVectorImg from "../assets/computer_vector.webp";
 import nodejsLogoImg from "../assets/nodejs.png";
 import postgresqlLogoImg from "../assets/postgresql.png";
 import reactjsLogoImg from "../assets/reactjs.png";
