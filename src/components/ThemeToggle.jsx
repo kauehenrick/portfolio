@@ -20,7 +20,7 @@ const ThemeToggle = () => {
   return (
     <button 
       onClick={toggleTheme}
-      className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 cursor-pointer"
+      className="cursor-pointer"
     >
       {theme === 'dark' ? <FaRegSun size={14} /> : <FaRegMoon size={14} />}
     </button>

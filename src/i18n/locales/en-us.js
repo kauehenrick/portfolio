@@ -7,9 +7,11 @@ export default {
       contact: "Contact",
     },
     main: {
+      hello: "Hello, world!",
       greetings: "Hi, I'm Kauê Henrick",
       title: "Web Developer",
       description: "Focused on delivering pages with attractive and efficient designs, aiming to provide an excellent experience for the end client.",
+      button: "Contact me",
 
       tools: {
         title1: "Main",

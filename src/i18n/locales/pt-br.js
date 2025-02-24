@@ -7,9 +7,11 @@ export default {
       contact: "Contato",
     },
     main: {
+      hello: "Olá, mundo!",
       greetings: "Olá, me chamo Kauê Henrick",
       title: "Desenvolvedor Web",
       description: "Focado em entregar páginas com designs atraentes e eficientes, visando proporcionar uma excelente experiência para o cliente final.",
+      button: "Vamos conversar",
 
       tools: {
         title1: "Principais",

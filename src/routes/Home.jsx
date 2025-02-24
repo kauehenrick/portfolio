@@ -1,8 +1,9 @@
-import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaLaptopCode } from "react-icons/fa6";
+import React from "react";
 import contactImg from "../assets/contact-image.jpeg";
 import figmaLogoImg from "../assets/figma.png";
 import headerLogoImg from "../assets/header-logo.png";
-import kauePictureImg from "../assets/kaue-picture.jpg";
+import ComputerVectorImg from "../assets/computer_vector.png";
 import nodejsLogoImg from "../assets/nodejs.png";
 import postgresqlLogoImg from "../assets/postgresql.png";
 import reactjsLogoImg from "../assets/reactjs.png";
@@ -18,13 +19,15 @@ import LanguageToggle from "../components/LanguageToggle";
 export default function Home() {
   const [selectedLink, setSelectedLink] = useState("inicio");
 
+  const tapeContent = ["Desenvolvimento Web", "|", "UI/UX", "|", "Desenvolvimento Fullstack", "|"];
+
   const handleClick = (link) => {
     setSelectedLink(link);
   };
 
   return (
     <>
-      <header className="bg-primary-white dark:bg-primary-black dark:text-primary-white fixed top-0 z-10 w-full flex items-center justify-between px-8 py-4 drop-shadow-lg">
+      <header className="bg-primary-white dark:bg-primary-black dark:text-primary-white w-full fixed top-0 z-10 flex items-center justify-between md:px-80 py-4 drop-shadow-lg">
         <img src={headerLogoImg} alt="logo Kauê Henrick" className="h-9" />
 
         <div className="flex gap-8">
@@ -87,24 +90,53 @@ export default function Home() {
       </header>
 
       <main className="dark:text-primary-white">
-        <section className="bg-secondary-white dark:bg-primary-gray flex flex-col md:flex-row items-center justify-center h-[700px] gap-10">
-          <div className="space-y-4 w-[550px]">
-            <p className="font-extrabold text-4xl"> <Translator path="main.greetings" /> <br /> <span className="text-primary-pink"> <Translator path="main.title" /> </span></p>
-            <p className="w-136"> <Translator path="main.description" /> </p>
+        <section className="bg-secondary-white dark:bg-primary-black flex flex-col justify-center min-h-screen">
+          <div className="flex md:flex-row items-center justify-between md:px-80">
 
-            <div className="flex text-primary-pink gap-7">
-              <a href="https://github.com/kauehenrick" target="blank" className="flex items-center gap-2 font-medium">
-                <FaGithub size="20px" />
-                <p>Github</p>
-              </a>
-              <a href="https://www.linkedin.com/in/kauehenrick/" target="blank" className="flex items-center gap-2 font-medium">
-                <FaLinkedin size="20px" />
-                <p>LinkedIn</p>
-              </a>
-            </div>
+            <section className="space-y-6">
+              <p className="text-2xl font-spacemono">&lt; <Translator path="main.hello" /> /&gt;</p>
+
+              <div className="space-y-4">
+                <p className="font-bold text-4xl"> <Translator path="main.greetings" /> <br /> <span className="text-primary-pink"> <Translator path="main.title" /> </span></p>
+                <p> <Translator path="main.description" /> </p>
+
+                <div className="flex text-primary-white gap-7">
+                  <a href="https://github.com/kauehenrick" target="blank" className="flex items-center gap-2 font-medium">
+                    <FaGithub size="20px" />
+                    <p>Github</p>
+                  </a>
+                  <a href="https://www.linkedin.com/in/kauehenrick/" target="blank" className="flex items-center gap-2 font-medium">
+                    <FaLinkedin size="20px" />
+                    <p>LinkedIn</p>
+                  </a>
+                </div>
+              </div>
+
+              <button className="bg-primary-pink rounded-sm flex items-center gap-3 text-sm font-semibold px-4 py-2 cursor-pointer">
+                <p> <Translator path="main.button" /> </p>
+
+                <FaLaptopCode size="20px" />
+              </button>
+            </section>
+
+            <img src={ComputerVectorImg} alt="Foto Kauê" className="h-154" />
           </div>
 
-          <img src={kauePictureImg} alt="Foto Kauê" className="h-[300px] rounded-r-2xl" />
+          <footer className="bg-primary-pink flex h-13 w-full absolute bottom-0 overflow-hidden">
+            <div className="relative flex whitespace-nowrap">
+              <div className="animate-marquee-continuous inline-flex items-center gap-4">
+                {Array.from({ length: 10 }, (_, outerIndex) => (
+                  <React.Fragment key={outerIndex}>
+                    {tapeContent.map((item, innerIndex) => (
+                      <span key={`${outerIndex}-${innerIndex}`} className="text-white font-medium">
+                        {item}
+                      </span>
+                    ))}
+                  </React.Fragment>
+                ))}
+              </div>
+            </div>
+          </footer>
         </section>
 
         <section id="ferramentas" className="bg-primary-white dark:bg-primary-black flex flex-col items-center justify-center py-15 gap-y-8">
@@ -143,7 +175,6 @@ export default function Home() {
       <footer className="bg-primary-pink text-primary-white h-12 flex items-center justify-center gap-3 text-xl">
         <a href="https://github.com/kauehenrick" target="blank"><FaGithub /></a>
         <a href="https://www.linkedin.com/in/kauehenrick/" target="blank"><FaLinkedin /></a>
-        <a href="https://www.instagram.com/kaue.weber/" target="blank"><FaInstagram /></a>
       </footer>
     </>
   )
