@@ -26,9 +26,10 @@ export default {
 
       contact: {
         title1: "Vamos trabalhar",
-        title2: "Juntos",
+        title2: "juntos",
         description1: "Caso queira conhecer mais sobre o meu trabalho ou sobre mim, talvez apenas mandar um \"alô\", me mande uma mensagem.",
         description2: "Estou esperando por você!",
+        myNumber: "Meu número:",
         name: "Nome:",
         email: "Email:",
         message: "Mensagem:",

@@ -36,17 +36,14 @@ export default function ContactForm() {
   };
 
   return (
-    <form id="contact-form" ref={form} onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
-      <label htmlFor="reply_to" className="mb-1"> <Translator path="main.contact.name" /> </label>
-      <input type="text" {...register("reply_to", { required: true })} placeholder={selectedLanguage == "pt-BR" ? "Seu nome" : "Your name"} className="bg-primary-white text-black rounded-lg w-82 h-8 px-2 mb-5 text-sm" />
+    <form id="contact-form" ref={form} onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-5/12 gap-11">
+      <input type="text" {...register("reply_to", { required: true })} placeholder={selectedLanguage == "pt-BR" ? "NOME" : "NAME"} className="font-spacemono text-white h-8 px-2 mb-5 border-b focus:outline-none" />
 
-      <label htmlFor="email" className="mb-1"> <Translator path="main.contact.email" /> </label>
-      <input type="email" {...register("email", { required: true })} placeholder="email@email.com" className="bg-primary-white text-black rounded-lg w-82 h-8 px-2 mb-5 text-sm" />
+      <input type="email" {...register("email", { required: true })} placeholder="EMAIL" className="text-white h-8 px-2 mb-5 border-b focus:outline-none" />
 
-      <label htmlFor="message" className="mb-1"> <Translator path="main.contact.message" /> </label>
-      <textarea {...register("message", { required: true })} placeholder={selectedLanguage == "pt-BR" ? "Sua mensagem aqui..." : "Your message here..."} className="bg-primary-white text-black rounded-lg w-82 px-2 py-1 mb-5 min-h-20 text-sm" />
+      <textarea {...register("message", { required: true })} placeholder={selectedLanguage == "pt-BR" ? "Sua mensagem..." : "Your message.."} className="font-spacemono text-white px-2 py-1 mb-5 min-h-20 border-b focus:outline-none" />
 
-      <button type="submit" className="bg-primary-pink rounded-lg py-1 w-30 self-end cursor-pointer hover:bg-primary-pink/85"> <Translator path="main.contact.send" /> </button>
+      <button type="submit" className="rounded-lg py-1 w-50 self-end cursor-pointer border text-primary-pink hover:bg-primary-pink/85 hover:text-white"> <Translator path="main.contact.send" /> </button>
     </form>
   );
 }

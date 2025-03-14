@@ -1,6 +1,5 @@
 import { FaGithub, FaLinkedin, FaLaptopCode } from "react-icons/fa6";
 import React from "react";
-import contactImg from "../assets/contact-image.jpeg";
 import figmaLogoImg from "../assets/figma.png";
 import headerLogoImg from "../assets/header-logo.png";
 import ComputerVectorImg from "../assets/computer_vector.webp";
@@ -15,11 +14,12 @@ import { useState } from "react";
 import ThemeToggle from "../components/ThemeToggle";
 import Translator from "../components/i18n/Translator";
 import LanguageToggle from "../components/LanguageToggle";
+import ProjectsSection from "../components/ProjectsSection";
 
 export default function Home() {
   const [selectedLink, setSelectedLink] = useState("inicio");
 
-  const tapeContent = ["Desenvolvimento Web", "|", "UI/UX", "|", "Desenvolvimento Fullstack", "|"];
+  const tapeContent = ["Desenvolvimento Web", "|", "UI/UX", "|", "Desenvolvimento Front-end", "|"];
 
   const handleClick = (link) => {
     setSelectedLink(link);
@@ -139,7 +139,7 @@ export default function Home() {
           </footer>
         </section>
 
-        <section id="ferramentas" className="bg-primary-white dark:bg-primary-black flex flex-col items-center justify-center py-15 gap-y-8">
+        <section id="ferramentas" className="bg-primary-white dark:bg-primary-black flex flex-col items-center justify-center gap-y-8 py-35">
           <h2 className="font-extrabold text-4xl"> <Translator path="main.tools.title1" /> <span className="text-primary-pink"> <Translator path="main.tools.title2" /> </span></h2>
 
           <div className="grid grid-flow-col grid-cols-2 gap-13">
@@ -156,19 +156,27 @@ export default function Home() {
           </div>
         </section>
 
-        {/*<section id="projetos">
+        {<section id="projetos">
           <ProjectsSection />
-        </section>*/}
+        </section>}
 
-        <section id="contato" className="bg-secondary-white dark:bg-primary-gray flex flex-col items-center justify-center py-15 gap-y-8">
-          <h2 className="font-extrabold text-4xl"> <Translator path="main.contact.title1" /> <span className="text-primary-pink"> <Translator path="main.contact.title2" /> </span></h2>
+        <section id="contato" className="bg-secondary-white dark:bg-primary-gray flex justify-between pb-35 md:px-80">
+          <div className="w-5/12 space-y-8">
+            <h2 className="font-extrabold text-4xl mb-5"> <Translator path="main.contact.title1" /> <span className="text-primary-pink"> <Translator path="main.contact.title2" /> </span>!</h2>
+            <p> <Translator path="main.contact.description1" /> <br /> <Translator path="main.contact.description2" /> </p>
 
-          <p className="text-center"> <Translator path="main.contact.description1" /> <br /> <Translator path="main.contact.description2" /> </p>
+            <div>
+              <p className="font-bold text-xl mb-3"> <Translator path="main.contact.myNumber" /> </p>
+              <p>+55 77 99943-4338</p>
+            </div>
 
-          <div className="flex flex-col md:flex-row items-center gap-13">
-            <img src={contactImg} alt="" className="h-[320px] max-sm:rounded-t-2xl md:rounded-l-2xl" />
-            <ContactForm />
+            <div>
+              <p className="font-bold text-xl mb-3">Email:</p>
+              <p>kauehenrick@proton.me</p>
+            </div>
           </div>
+
+          <ContactForm />
         </section>
       </main>
 

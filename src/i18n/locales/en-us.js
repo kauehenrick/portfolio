@@ -26,9 +26,10 @@ export default {
 
       contact: {
         title1: "Let's work",
-        title2: "Together",
+        title2: "together",
         description1: "If you want to know more about my work or about me, or maybe just say \"hello\", send me a message.",
         description2: "I'm waiting for you!",
+        myNumber: "My number:",
         name: "Name:",
         email: "Email:",
         message: "Message:",
