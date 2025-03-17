@@ -37,9 +37,9 @@ export default function ContactForm() {
 
   return (
     <form id="contact-form" ref={form} onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-5/12 gap-11">
-      <input type="text" {...register("reply_to", { required: true })} placeholder={selectedLanguage == "pt-BR" ? "NOME" : "NAME"} className="font-spacemono text-white h-8 px-2 mb-5 border-b focus:outline-none" />
+      <input autoComplete="off" type="text" {...register("reply_to", { required: true })} placeholder={selectedLanguage == "pt-BR" ? "NOME" : "NAME"} className="font-spacemono text-white h-8 px-2 mb-5 border-b focus:outline-none" />
 
-      <input type="email" {...register("email", { required: true })} placeholder="EMAIL" className="text-white h-8 px-2 mb-5 border-b focus:outline-none" />
+      <input autoComplete="off" type="email" {...register("email", { required: true })} placeholder="EMAIL" className="text-white h-8 px-2 mb-5 border-b focus:outline-none" />
 
       <textarea {...register("message", { required: true })} placeholder={selectedLanguage == "pt-BR" ? "Sua mensagem..." : "Your message.."} className="font-spacemono text-white px-2 py-1 mb-5 min-h-20 border-b focus:outline-none" />
 

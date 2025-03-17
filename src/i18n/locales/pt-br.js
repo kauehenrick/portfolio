@@ -14,14 +14,20 @@ export default {
       button: "Vamos conversar",
 
       tools: {
-        title1: "Principais",
-        title2: "Ferramentas",
-        typescript: "Linguagem de programação",
-        figma: "Ferramenta de prototipação",
-        nodejs: "Ambiente de execução Javascript",
-        reactjs: "Biblioteca de Javascript",
-        tailwindcss: "Framework de CSS",
-        postgresql: "Banco de dados relacional",
+        title1: "Minhas habilidades que estarão",
+        title2: "a sua disposição",
+        list: {
+          frontend: "Desenvolvimento Frontend (ReactJS, TailwindCSS)",
+          backend: "Desenvolvimento Backend (NodeJS, Typescript)",
+          design: "Design/Prototipação de Telas",
+          database: "Desenvolvimento e manutenção de banco de dados"
+        }
+      },
+
+      projects: {
+        title1: "Projetos",
+        title2: "em destaque",
+        description: "Exemplos comprovados de como posso te ajudar a alcançar seus resultados, por meio do meu serviço."
       },
 
       contact: {

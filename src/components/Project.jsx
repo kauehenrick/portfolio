@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 export default function Project({ ProjectTitle, ProjectSubtitle, ProjectDescription, ProjectImage, ProjectRow, ProjectTools, SeeMoreLink, GithubLink }) {
   return (
-    <section className={`flex ${ProjectRow} rounded-lg p-5 drop-shadow-lg gap-2 w-8/12`}>
+    <section className={`flex ${ProjectRow} rounded-lg p-5 drop-shadow-lg gap-2 w-full`}>
 
       <img src={ProjectImage} alt="Imagem referente ao projeto" className='border-[0.25px] border-gray-300/10 rounded-lg object-cover w-96' />
 

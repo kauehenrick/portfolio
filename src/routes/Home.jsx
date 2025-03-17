@@ -1,20 +1,13 @@
-import { FaGithub, FaLinkedin, FaLaptopCode } from "react-icons/fa6";
-import React from "react";
-import figmaLogoImg from "../assets/figma.png";
+import React, { useState } from "react";
+import { FaGithub, FaLaptopCode, FaLinkedin } from "react-icons/fa6";
 import headerLogoImg from "../assets/header-logo.png";
-import ComputerVectorImg from "../assets/computer_vector.webp";
-import nodejsLogoImg from "../assets/nodejs.png";
-import postgresqlLogoImg from "../assets/postgresql.png";
-import reactjsLogoImg from "../assets/reactjs.png";
-import tailwindLogoImg from "../assets/tailwindcss.png";
-import typescriptLogoImg from "../assets/typescript.png";
 import ContactForm from "../components/ContactForm";
-import SkillItem from "../components/SkillItem";
-import { useState } from "react";
-import ThemeToggle from "../components/ThemeToggle";
-import Translator from "../components/i18n/Translator";
+import T from "../components/i18n/Translator";
 import LanguageToggle from "../components/LanguageToggle";
 import ProjectsSection from "../components/ProjectsSection";
+import ThemeToggle from "../components/ThemeToggle";
+import ToolsIconSection from "../components/ToolsIconSection";
+import MetaBalls from "../components/MetaBalls";
 
 export default function Home() {
   const [selectedLink, setSelectedLink] = useState("inicio");
@@ -38,7 +31,7 @@ export default function Home() {
                   }`}
               >
                 <a href="#" onClick={() => handleClick('inicio')}>
-                  <Translator path="header.home" />
+                  <T path="header.home" />
                 </a>
                 {selectedLink === 'inicio' && (
                   <span className="absolute bottom-0 left-0 w-full h-0.5 rounded-full bg-primary-pink"></span>
@@ -49,30 +42,30 @@ export default function Home() {
                   }`}
               >
                 <a href="#ferramentas" onClick={() => handleClick('ferramentas')}>
-                  <Translator path="header.tools" />
+                  <T path="header.tools" />
                 </a>
                 {selectedLink === 'ferramentas' && (
                   <span className="absolute bottom-0 left-0 w-full h-0.5 rounded-full bg-primary-pink"></span>
                 )}
               </li>
-              {/*<li
+              <li
                 className={`hover:text-black dark:hover:text-white transition-colors relative ${selectedLink === 'projetos' ? 'dark:text-primary-white' : 'text-gray-400'
                   }`}
               >
                 <a href="#projetos" onClick={() => handleClick('projetos')}>
-                  <Translator path="header.projects"/>
+                  <T path="header.projects" />
                 </a>
                 {selectedLink === 'projetos' && (
                   <span className="absolute bottom-0 left-0 w-full h-0.5 rounded-full bg-primary-pink"></span>
                 )}
-              </li>*/}
+              </li>
 
               <li
                 className={`hover:text-black dark:hover:text-white transition-colors relative ${selectedLink === 'contato' ? 'dark:text-primary-white' : 'text-gray-400'
                   }`}
               >
                 <a href="#contato" onClick={() => handleClick('contato')}>
-                  <Translator path="header.contact" />
+                  <T path="header.contact" />
                 </a>
                 {selectedLink === 'contato' && (
                   <span className="absolute bottom-0 left-0 w-full h-0.5 rounded-full bg-primary-pink"></span>
@@ -90,15 +83,14 @@ export default function Home() {
       </header>
 
       <main className="dark:text-primary-white">
-        <section className="bg-secondary-white dark:bg-primary-black flex flex-col justify-center min-h-screen">
-          <div className="flex md:flex-row items-center justify-between md:px-80">
-
-            <section className="space-y-6">
-              <p className="text-2xl font-spacemono">&lt; <Translator path="main.hello" /> /&gt;</p>
+        <section className="bg-secondary-white dark:bg-primary-black">
+          <div className="flex flex-col md:flex-row justify-between min-h-screen">
+            <section className="space-y-6 md:w-5/12 mt-30 pl-80">
+              <p className="text-2xl font-spacemono">&lt; <T path="main.hello" /> /&gt;</p>
 
               <div className="space-y-4">
-                <p className="font-bold text-4xl"> <Translator path="main.greetings" /> <br /> <span className="text-primary-pink"> <Translator path="main.title" /> </span></p>
-                <p> <Translator path="main.description" /> </p>
+                <p className="font-bold text-4xl"> <T path="main.greetings" /> <br /> <span className="text-primary-pink"> <T path="main.title" /> </span></p>
+                <p> <T path="main.description" /> </p>
 
                 <div className="flex text-primary-white gap-7">
                   <a href="https://github.com/kauehenrick" target="blank" className="flex items-center gap-2 font-medium">
@@ -112,15 +104,28 @@ export default function Home() {
                 </div>
               </div>
 
-              <button className="bg-primary-pink rounded-sm flex items-center gap-3 text-sm font-semibold px-4 py-2 cursor-pointer">
-                <p> <Translator path="main.button" /> </p>
-
+              <a href="#contato" className="bg-primary-pink rounded-sm flex items-center justify-center gap-3 text-sm font-semibold px-4 py-2 w-50 cursor-pointer" onClick={() => handleClick('contato')}>
+                <p> <T path="main.button" /> </p>
                 <FaLaptopCode size="20px" />
-              </button>
+              </a>
             </section>
 
-            <img src={ComputerVectorImg} alt="Foto Kauê" className="h-154" />
+            <div className="cursor-pointer">
+              <MetaBalls
+                color="#ffffff"
+                cursorBallColor="#ffffff"
+                cursorBallSize={2}
+                ballCount={15}
+                animationSize={30}
+                enableMouseInteraction={true}
+                enableTransparency={true}
+                hoverSmoothness={0.05}
+                clumpFactor={1}
+                speed={0.3}
+              />
+            </div>
           </div>
+
 
           <footer className="bg-primary-pink flex h-13 w-full absolute bottom-0 overflow-hidden">
             <div className="relative flex whitespace-nowrap">
@@ -139,34 +144,29 @@ export default function Home() {
           </footer>
         </section>
 
-        <section id="ferramentas" className="bg-primary-white dark:bg-primary-black flex flex-col items-center justify-center gap-y-8 py-35">
-          <h2 className="font-extrabold text-4xl"> <Translator path="main.tools.title1" /> <span className="text-primary-pink"> <Translator path="main.tools.title2" /> </span></h2>
-
-          <div className="grid grid-flow-col grid-cols-2 gap-13">
-            <div className="space-y-8">
-              <SkillItem skillLogo={typescriptLogoImg} skillTitle="Typescript" skillDescription={<Translator path="main.tools.typescript" />} />
-              <SkillItem skillLogo={figmaLogoImg} skillTitle="Figma" skillDescription={<Translator path="main.tools.figma" />} />
-              <SkillItem skillLogo={nodejsLogoImg} skillTitle="NodeJS" skillDescription={<Translator path="main.tools.nodejs" />} />
-            </div>
-            <div className="space-y-8">
-              <SkillItem skillLogo={reactjsLogoImg} skillTitle="ReactJS" skillDescription={<Translator path="main.tools.reactjs" />} />
-              <SkillItem skillLogo={tailwindLogoImg} skillTitle="TailwindCSS" skillDescription={<Translator path="main.tools.tailwindcss" />} />
-              <SkillItem skillLogo={postgresqlLogoImg} skillTitle="PostgreSQL" skillDescription={<Translator path="main.tools.postgresql" />} />
-            </div>
+        <section id="ferramentas" className="bg-primary-white dark:bg-primary-black flex justify-between py-35 md:px-80">
+          <div className="w-5/12">
+            <h2 className="font-extrabold text-4xl mb-5"> <T path="main.tools.title1" /> <span className="text-primary-pink"> <T path="main.tools.title2" /> </span></h2>
+            <li> <T path="main.tools.list.frontend" /> </li>
+            <li> <T path="main.tools.list.backend" /> </li>
+            <li> <T path="main.tools.list.design" /> </li>
+            <li> <T path="main.tools.list.database" /> </li>
           </div>
+
+          <ToolsIconSection />
         </section>
 
         {<section id="projetos">
           <ProjectsSection />
         </section>}
 
-        <section id="contato" className="bg-secondary-white dark:bg-primary-gray flex justify-between pb-35 md:px-80">
+        <section id="contato" className="bg-secondary-white dark:bg-primary-black flex justify-between pb-35 md:px-80">
           <div className="w-5/12 space-y-8">
-            <h2 className="font-extrabold text-4xl mb-5"> <Translator path="main.contact.title1" /> <span className="text-primary-pink"> <Translator path="main.contact.title2" /> </span>!</h2>
-            <p> <Translator path="main.contact.description1" /> <br /> <Translator path="main.contact.description2" /> </p>
+            <h2 className="font-extrabold text-4xl mb-5"> <T path="main.contact.title1" /> <span className="text-primary-pink"> <T path="main.contact.title2" /> </span>!</h2>
+            <p> <T path="main.contact.description1" /> <br /> <T path="main.contact.description2" /> </p>
 
             <div>
-              <p className="font-bold text-xl mb-3"> <Translator path="main.contact.myNumber" /> </p>
+              <p className="font-bold text-xl mb-3"> <T path="main.contact.myNumber" /> </p>
               <p>+55 77 99943-4338</p>
             </div>
 
