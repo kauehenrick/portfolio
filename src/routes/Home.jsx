@@ -4,10 +4,9 @@ import headerLogoImg from "../assets/header-logo.png";
 import ContactForm from "../components/ContactForm";
 import T from "../components/i18n/Translator";
 import LanguageToggle from "../components/LanguageToggle";
-import ProjectsSection from "../components/ProjectsSection";
+//import ProjectsSection from "../components/ProjectsSection";
 import ThemeToggle from "../components/ThemeToggle";
 import ToolsIconSection from "../components/ToolsIconSection";
-import MetaBalls from "../components/MetaBalls";
 
 export default function Home() {
   const [selectedLink, setSelectedLink] = useState("inicio");
@@ -48,7 +47,7 @@ export default function Home() {
                   <span className="absolute bottom-0 left-0 w-full h-0.5 rounded-full bg-primary-pink"></span>
                 )}
               </li>
-              <li
+              {/*<li
                 className={`hover:text-black dark:hover:text-white transition-colors relative ${selectedLink === 'projetos' ? 'dark:text-primary-white' : 'text-gray-400'
                   }`}
               >
@@ -58,7 +57,7 @@ export default function Home() {
                 {selectedLink === 'projetos' && (
                   <span className="absolute bottom-0 left-0 w-full h-0.5 rounded-full bg-primary-pink"></span>
                 )}
-              </li>
+              </li>*/}
 
               <li
                 className={`hover:text-black dark:hover:text-white transition-colors relative ${selectedLink === 'contato' ? 'dark:text-primary-white' : 'text-gray-400'
@@ -85,7 +84,7 @@ export default function Home() {
       <main className="dark:text-primary-white">
         <section className="bg-secondary-white dark:bg-primary-black">
           <div className="flex flex-col md:flex-row justify-between min-h-screen">
-            <section className="space-y-6 md:w-5/12 mt-30 pl-80">
+            <section className="space-y-10 md:w-5/12 mt-35 pl-80">
               <p className="text-2xl font-spacemono">&lt; <T path="main.hello" /> /&gt;</p>
 
               <div className="space-y-4">
@@ -109,21 +108,6 @@ export default function Home() {
                 <FaLaptopCode size="20px" />
               </a>
             </section>
-
-            <div className="cursor-pointer">
-              <MetaBalls
-                color="#ffffff"
-                cursorBallColor="#ffffff"
-                cursorBallSize={2}
-                ballCount={15}
-                animationSize={30}
-                enableMouseInteraction={true}
-                enableTransparency={true}
-                hoverSmoothness={0.05}
-                clumpFactor={1}
-                speed={0.3}
-              />
-            </div>
           </div>
 
 
@@ -156,9 +140,9 @@ export default function Home() {
           <ToolsIconSection />
         </section>
 
-        {<section id="projetos">
+        {/*<section id="projetos">
           <ProjectsSection />
-        </section>}
+        </section>*/}
 
         <section id="contato" className="bg-secondary-white dark:bg-primary-black flex justify-between pb-35 md:px-80">
           <div className="w-5/12 space-y-8">
