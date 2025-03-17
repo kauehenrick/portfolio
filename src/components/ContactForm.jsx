@@ -37,13 +37,18 @@ export default function ContactForm() {
 
   return (
     <form id="contact-form" ref={form} onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-5/12 gap-11">
-      <input autoComplete="off" type="text" {...register("reply_to", { required: true })} placeholder={selectedLanguage == "pt-BR" ? "NOME" : "NAME"} className="font-spacemono text-white h-8 px-2 mb-5 border-b focus:outline-none" />
+      <input autoComplete="off" type="text" {...register("reply_to", { required: true })} placeholder={selectedLanguage == "pt-BR" ? "NOME" : "NAME"} className="font-spacemono h-8 px-2 mb-5 border-b focus:outline-none" />
 
-      <input autoComplete="off" type="email" {...register("email", { required: true })} placeholder="EMAIL" className="text-white h-8 px-2 mb-5 border-b focus:outline-none" />
+      <input autoComplete="off" type="email" {...register("email", { required: true })} placeholder="EMAIL" className="h-8 px-2 mb-5 border-b focus:outline-none" />
 
-      <textarea {...register("message", { required: true })} placeholder={selectedLanguage == "pt-BR" ? "Sua mensagem..." : "Your message.."} className="font-spacemono text-white px-2 py-1 mb-5 min-h-20 border-b focus:outline-none" />
+      <textarea {...register("message", { required: true })} placeholder={selectedLanguage == "pt-BR" ? "Sua mensagem..." : "Your message.."} className="font-spacemono px-2 py-1 mb-5 min-h-20 border-b focus:outline-none" />
 
-      <button type="submit" className="rounded-lg py-1 w-50 self-end cursor-pointer border text-primary-pink hover:bg-primary-pink/85 hover:text-white"> <Translator path="main.contact.send" /> </button>
+      <button
+        type="submit"
+        className="rounded-lg py-1 w-50 self-end cursor-pointer border text-primary-pink 
+             hover:bg-primary-pink/85 hover:text-white transition duration-200">
+        <Translator path="main.contact.send" />
+      </button>
     </form>
   );
 }

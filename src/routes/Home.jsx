@@ -7,6 +7,7 @@ import LanguageToggle from "../components/LanguageToggle";
 //import ProjectsSection from "../components/ProjectsSection";
 import ThemeToggle from "../components/ThemeToggle";
 import ToolsIconSection from "../components/ToolsIconSection";
+import MagnetLines from "../components/MagnetLines";
 
 export default function Home() {
   const [selectedLink, setSelectedLink] = useState("inicio");
@@ -84,14 +85,14 @@ export default function Home() {
       <main className="dark:text-primary-white">
         <section className="bg-secondary-white dark:bg-primary-black">
           <div className="flex flex-col md:flex-row justify-between min-h-screen">
-            <section className="space-y-10 md:w-5/12 mt-35 pl-80">
+            <section className="space-y-10 md:w-5/12 md:mt-45 md:pl-80">
               <p className="text-2xl font-spacemono">&lt; <T path="main.hello" /> /&gt;</p>
 
               <div className="space-y-4">
                 <p className="font-bold text-4xl"> <T path="main.greetings" /> <br /> <span className="text-primary-pink"> <T path="main.title" /> </span></p>
                 <p> <T path="main.description" /> </p>
 
-                <div className="flex text-primary-white gap-7">
+                <div className="flex gap-7">
                   <a href="https://github.com/kauehenrick" target="blank" className="flex items-center gap-2 font-medium">
                     <FaGithub size="20px" />
                     <p>Github</p>
@@ -103,11 +104,22 @@ export default function Home() {
                 </div>
               </div>
 
-              <a href="#contato" className="bg-primary-pink rounded-sm flex items-center justify-center gap-3 text-sm font-semibold px-4 py-2 w-50 cursor-pointer" onClick={() => handleClick('contato')}>
+              <a href="#contato" className="bg-primary-pink hover:bg-primary-pink/85 text-white transition duration-200 rounded-sm flex items-center justify-center gap-3 text-sm font-semibold px-4 py-2 w-50 cursor-pointer" onClick={() => handleClick('contato')}>
                 <p> <T path="main.button" /> </p>
                 <FaLaptopCode size="20px" />
               </a>
             </section>
+
+            <MagnetLines
+              rows={9}
+              columns={9}
+              containerSize="60vmin"
+              lineColor="#EF476F"
+              lineWidth="0.8vmin"
+              lineHeight="5vmin"
+              baseAngle={0}
+              style={{ margin: "auto" }}
+            />
           </div>
 
 
@@ -128,7 +140,7 @@ export default function Home() {
           </footer>
         </section>
 
-        <section id="ferramentas" className="bg-primary-white dark:bg-primary-black flex justify-between py-35 md:px-80">
+        <section id="ferramentas" className="bg-secondary-white dark:bg-primary-black flex justify-between py-35 md:px-80">
           <div className="w-5/12">
             <h2 className="font-extrabold text-4xl mb-5"> <T path="main.tools.title1" /> <span className="text-primary-pink"> <T path="main.tools.title2" /> </span></h2>
             <li> <T path="main.tools.list.frontend" /> </li>
