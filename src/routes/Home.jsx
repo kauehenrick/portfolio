@@ -12,7 +12,14 @@ import MagnetLines from "../components/MagnetLines";
 export default function Home() {
   const [selectedLink, setSelectedLink] = useState("inicio");
 
-  const tapeContent = ["Desenvolvimento Web", "|", "UI/UX", "|", "Desenvolvimento Front-end", "|"];
+  const tapeContent = [
+    <T key="webDevelopment" path="main.footer.webDevelopment" />,
+    "|",
+    <T key="uiux" path="main.footer.uiux" />,
+    "|",
+    <T key="frontendDevelopment" path="main.footer.frontendDevelopment" />,
+    "|",
+  ];
 
   const handleClick = (link) => {
     setSelectedLink(link);
@@ -121,7 +128,6 @@ export default function Home() {
               style={{ margin: "auto" }}
             />
           </div>
-
 
           <footer className="bg-primary-pink flex h-13 w-full absolute bottom-0 overflow-hidden">
             <div className="relative flex whitespace-nowrap">

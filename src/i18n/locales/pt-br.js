@@ -8,39 +8,45 @@ export default {
     },
     main: {
       hello: "Olá, mundo!",
-      greetings: "Olá, me chamo Kauê Henrick",
+      greetings: "Olá, meu nome é Kauê Henrick",
       title: "Desenvolvedor Web",
-      description: "Focado em entregar páginas com designs atraentes e eficientes, visando proporcionar uma excelente experiência para o cliente final.",
-      button: "Vamos conversar",
+      description: "Especializado em criar páginas atraentes e eficientes, proporcionando a melhor experiência para o usuário final.",
+      button: "Entre em contato",
+
+      footer: {
+        webDevelopment: "Desenvolvimento Web",
+        uiux: "UI/UX",
+        frontendDevelopment: "Desenvolvimento Front-end",
+      },
 
       tools: {
-        title1: "Minhas habilidades que estarão",
-        title2: "a sua disposição",
+        title1: "Minhas habilidades",
+        title2: "ao seu dispor",
         list: {
           frontend: "Desenvolvimento Frontend (ReactJS, TailwindCSS)",
-          backend: "Desenvolvimento Backend (NodeJS, Typescript)",
-          design: "Design/Prototipação de Telas",
-          database: "Desenvolvimento e manutenção de banco de dados"
-        }
+          backend: "Desenvolvimento Backend (NodeJS, TypeScript)",
+          design: "Design e Prototipação de Interfaces",
+          database: "Criação e manutenção de bancos de dados",
+        },
       },
 
       projects: {
         title1: "Projetos",
         title2: "em destaque",
-        description: "Exemplos comprovados de como posso te ajudar a alcançar seus resultados, por meio do meu serviço."
+        description: "Exemplos reais de como meu trabalho pode ajudar você a alcançar seus objetivos.",
       },
 
       contact: {
         title1: "Vamos trabalhar",
-        title2: "juntos",
-        description1: "Caso queira conhecer mais sobre o meu trabalho ou sobre mim, talvez apenas mandar um \"alô\", me mande uma mensagem.",
-        description2: "Estou esperando por você!",
+        title2: "juntos?",
+        description1: "Quer saber mais sobre meu trabalho ou apenas bater um papo? Envie-me uma mensagem.",
+        description2: "Estou esperando seu contato!",
         myNumber: "Meu número:",
         name: "Nome:",
-        email: "Email:",
+        email: "E-mail:",
         message: "Mensagem:",
         send: "Enviar",
-      }
-    }
-  }
-}
+      },
+    },
+  },
+};

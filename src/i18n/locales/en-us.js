@@ -8,39 +8,45 @@ export default {
     },
     main: {
       hello: "Hello, world!",
-      greetings: "Hello, my name is Kauê Henrick",
+      greetings: "Hi, my name is Kauê Henrick",
       title: "Web Developer",
-      description: "Focused on delivering pages with attractive and efficient designs, aiming to provide an excellent experience for the end customer.",
-      button: "Let's talk",
+      description: "Specialized in creating attractive and efficient pages, delivering the best user experience.",
+      button: "Get in touch",
+
+      footer: {
+        webDevelopment: "Web Development",
+        uiux: "UI/UX",
+        frontendDevelopment: "Front-end Development",
+      },
 
       tools: {
-        title1: "My skills that will be",
-        title2: "at your disposal",
+        title1: "My skills",
+        title2: "at your service",
         list: {
           frontend: "Frontend Development (ReactJS, TailwindCSS)",
-          backend: "Backend Development (NodeJS, Typescript)",
-          design: "Design/Screen Prototyping",
-          database: "Database Development and Maintenance"
-        }
+          backend: "Backend Development (NodeJS, TypeScript)",
+          design: "UI Design and Prototyping",
+          database: "Database creation and maintenance",
+        },
       },
 
       projects: {
         title1: "Featured",
         title2: "Projects",
-        description: "Proven examples of how I can help you achieve your goals through my service."
+        description: "Real examples of how my work can help you achieve your goals.",
       },
 
       contact: {
         title1: "Let's work",
-        title2: "together",
-        description1: "If you want to learn more about my work or about me, or maybe just say 'hello', send me a message.",
-        description2: "I'm waiting for you!",
+        title2: "together?",
+        description1: "Want to learn more about my work or just have a chat? Send me a message.",
+        description2: "I'm looking forward to hearing from you!",
         myNumber: "My number:",
         name: "Name:",
         email: "Email:",
         message: "Message:",
         send: "Send",
-      }
-    }
-  }
-}
+      },
+    },
+  },
+};
