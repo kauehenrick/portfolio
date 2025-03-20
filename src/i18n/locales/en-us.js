@@ -16,7 +16,7 @@ export default {
       footer: {
         webDevelopment: "Web Development",
         uiux: "UI/UX",
-        frontendDevelopment: "Front-end Development",
+        frontendDevelopment: "Frontend Development",
       },
 
       tools: {

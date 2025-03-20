@@ -164,7 +164,7 @@ export default function Home() {
 
         <section id="contato" className="bg-secondary-white dark:bg-primary-black flex justify-between pb-35 md:px-80">
           <div className="w-5/12 space-y-8">
-            <h2 className="font-extrabold text-4xl mb-5"> <T path="main.contact.title1" /> <span className="text-primary-pink"> <T path="main.contact.title2" /> </span>!</h2>
+            <h2 className="font-extrabold text-4xl mb-5"> <T path="main.contact.title1" /> <span className="text-primary-pink"> <T path="main.contact.title2" /> </span></h2>
             <p> <T path="main.contact.description1" /> <br /> <T path="main.contact.description2" /> </p>
 
             <div>
