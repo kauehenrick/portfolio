@@ -36,7 +36,7 @@ export default function ContactForm() {
   };
 
   return (
-    <form id="contact-form" ref={form} onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-5/12 gap-11">
+    <form id="contact-form" ref={form} onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-full gap-11">
       <input autoComplete="off" type="text" {...register("reply_to", { required: true })} placeholder={selectedLanguage == "pt-BR" ? "NOME" : "NAME"} className="font-spacemono h-8 px-2 mb-5 border-b focus:outline-none" />
 
       <input autoComplete="off" type="email" {...register("email", { required: true })} placeholder="EMAIL" className="h-8 px-2 mb-5 border-b focus:outline-none" />

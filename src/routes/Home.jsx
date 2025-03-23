@@ -4,7 +4,6 @@ import headerLogoImg from "../assets/header-logo.png";
 import ContactForm from "../components/ContactForm";
 import T from "../components/i18n/Translator";
 import LanguageToggle from "../components/LanguageToggle";
-//import ProjectsSection from "../components/ProjectsSection";
 import ThemeToggle from "../components/ThemeToggle";
 import ToolsIconSection from "../components/ToolsIconSection";
 import MagnetLines from "../components/MagnetLines";
@@ -27,57 +26,20 @@ export default function Home() {
 
   return (
     <>
-      <header className="bg-primary-white dark:bg-primary-black dark:text-primary-white w-full fixed top-0 z-10 flex items-center justify-between md:px-80 py-4 drop-shadow-lg">
+      <header className="bg-primary-white dark:bg-primary-black dark:text-primary-white w-full fixed top-0 z-10 flex items-center justify-between md:px-80 py-4 drop-shadow-lg overflow-x-hidden">
         <img src={headerLogoImg} alt="logo Kauê Henrick" className="h-9" />
 
-        <div className="flex gap-8">
+        <div className="hidden md:flex gap-8">
           <nav>
-            <ul className="flex gap-5">
-              <li
-                className={`hover:text-black dark:hover:text-white transition-colors relative ${selectedLink === 'inicio' ? 'dark:text-primary-white' : 'text-gray-400'
-                  }`}
-              >
-                <a href="#" onClick={() => handleClick('inicio')}>
-                  <T path="header.home" />
-                </a>
-                {selectedLink === 'inicio' && (
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 rounded-full bg-primary-pink"></span>
-                )}
-              </li>
-              <li
-                className={`hover:text-black dark:hover:text-white transition-colors relative ${selectedLink === 'ferramentas' ? 'dark:text-primary-white' : 'text-gray-400'
-                  }`}
-              >
-                <a href="#ferramentas" onClick={() => handleClick('ferramentas')}>
-                  <T path="header.tools" />
-                </a>
-                {selectedLink === 'ferramentas' && (
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 rounded-full bg-primary-pink"></span>
-                )}
-              </li>
-              {/*<li
-                className={`hover:text-black dark:hover:text-white transition-colors relative ${selectedLink === 'projetos' ? 'dark:text-primary-white' : 'text-gray-400'
-                  }`}
-              >
-                <a href="#projetos" onClick={() => handleClick('projetos')}>
-                  <T path="header.projects" />
-                </a>
-                {selectedLink === 'projetos' && (
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 rounded-full bg-primary-pink"></span>
-                )}
-              </li>*/}
-
-              <li
-                className={`hover:text-black dark:hover:text-white transition-colors relative ${selectedLink === 'contato' ? 'dark:text-primary-white' : 'text-gray-400'
-                  }`}
-              >
-                <a href="#contato" onClick={() => handleClick('contato')}>
-                  <T path="header.contact" />
-                </a>
-                {selectedLink === 'contato' && (
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 rounded-full bg-primary-pink"></span>
-                )}
-              </li>
+            <ul className="flex gap-5 text-sm md:text-base">
+              {["home", "tools", "contact"].map((link) => (
+                <li key={link} className={`relative hover:text-black dark:hover:text-white transition-colors ${selectedLink === link ? 'dark:text-primary-white' : 'text-gray-400'}`}>
+                  <a href={`#${link}`} onClick={() => handleClick(link)}>
+                    <T path={`header.${link}`} />
+                  </a>
+                  {selectedLink === link && <span className="absolute bottom-0 left-0 w-full h-0.5 rounded-full bg-primary-pink"></span>}
+                </li>
+              ))}
             </ul>
           </nav>
 
@@ -89,10 +51,10 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="dark:text-primary-white">
-        <section className="bg-secondary-white dark:bg-primary-black">
+      <main className="bg-secondary-white dark:bg-primary-black dark:text-primary-white overflow-x-hidden">
+        <section id="home">
           <div className="flex flex-col md:flex-row justify-between min-h-screen">
-            <section className="space-y-10 md:w-5/12 md:mt-45 md:pl-80">
+            <section className="space-y-10 mx-5 md:w-5/12 md:mt-45 md:pl-80">
               <p className="text-2xl font-spacemono">&lt; <T path="main.hello" /> /&gt;</p>
 
               <div className="space-y-4">
@@ -146,8 +108,8 @@ export default function Home() {
           </footer>
         </section>
 
-        <section id="ferramentas" className="bg-secondary-white dark:bg-primary-black flex justify-between py-35 md:px-80">
-          <div className="w-5/12">
+        <section id="tools" className="flex flex-col md:flex-row justify-between py-20 px-5 gap-10">
+          <div className="md:w-5/12">
             <h2 className="font-extrabold text-4xl mb-5"> <T path="main.tools.title1" /> <span className="text-primary-pink"> <T path="main.tools.title2" /> </span></h2>
             <li> <T path="main.tools.list.frontend" /> </li>
             <li> <T path="main.tools.list.backend" /> </li>
@@ -158,12 +120,8 @@ export default function Home() {
           <ToolsIconSection />
         </section>
 
-        {/*<section id="projetos">
-          <ProjectsSection />
-        </section>*/}
-
-        <section id="contato" className="bg-secondary-white dark:bg-primary-black flex justify-between pb-35 md:px-80">
-          <div className="w-5/12 space-y-8">
+        <section id="contact" className="flex flex-col md:flex-row justify-between pb-20 px-5 gap-10">
+          <div className="space-y-8">
             <h2 className="font-extrabold text-4xl mb-5"> <T path="main.contact.title1" /> <span className="text-primary-pink"> <T path="main.contact.title2" /> </span></h2>
             <p> <T path="main.contact.description1" /> <br /> <T path="main.contact.description2" /> </p>
 
@@ -182,9 +140,11 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="bg-primary-pink text-primary-white h-12 flex items-center justify-center gap-3 text-xl">
-        <a href="https://github.com/kauehenrick" target="blank"><FaGithub /></a>
-        <a href="https://www.linkedin.com/in/kauehenrick/" target="blank"><FaLinkedin /></a>
+      <footer className="bg-primary-pink flex flex-wrap items-center justify-center py-4 text-primary-white text-sm md:text-base">
+        <div className="flex flex-wrap justify-center gap-4 w-full">
+          <a href="https://github.com/kauehenrick" target="blank"><FaGithub size="20px" /></a>
+          <a href="https://www.linkedin.com/in/kauehenrick/" target="blank"><FaLinkedin size="20px" /></a>
+        </div>
       </footer>
     </>
   )
