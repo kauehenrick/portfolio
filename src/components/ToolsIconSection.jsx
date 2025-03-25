@@ -34,7 +34,7 @@ const tools = [
 
 export default function ToolsIconSection() {
   return (
-    <div className="grid grid-cols-5 gap-11">
+    <div className="grid grid-cols-3 md:grid-cols-5 gap-5 md:gap-10">
       {tools.map((tool, index) => (
         <div key={index} className="relative flex flex-col items-center group">
           <div className="relative flex items-center justify-center">
