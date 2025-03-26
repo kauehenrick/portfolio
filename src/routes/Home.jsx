@@ -53,7 +53,7 @@ export default function Home() {
 
       <main className="bg-secondary-white dark:bg-primary-black dark:text-primary-white overflow-x-hidden">
         <section id="home">
-          <div className="flex flex-col md:flex-row md:justify-between min-h-screen px-4 sm:px-10 md:px-20 max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row md:justify-between md:min-h-screen px-4 sm:px-10 md:px-20 max-w-7xl mx-auto">
             <section className="space-y-10 w-full md:w-5/12 md:flex md:flex-col md:justify-center">
               <p className="text-xl md:text-2xl font-spacemono">&lt; <T path="main.hello" /> /&gt;</p>
 
@@ -109,7 +109,7 @@ export default function Home() {
             </div>
           </div>
 
-          <footer className="bg-primary-pink flex h-13 w-full absolute bottom-0 overflow-hidden">
+          <footer className="bg-primary-pink hidden md:flex h-13 w-full absolute bottom-0 overflow-hidden">
             <div className="relative flex whitespace-nowrap w-full">
               <div className="animate-marquee-continuous inline-flex items-center gap-4">
                 {Array.from({ length: 10 }, (_, outerIndex) => (

@@ -45,8 +45,7 @@ export default function ContactForm() {
 
       <button
         type="submit"
-        className="rounded-lg py-1 w-50 self-end cursor-pointer border text-primary-pink 
-             hover:bg-primary-pink/85 hover:text-white transition duration-200">
+        className="rounded-lg py-1 w-full md:w-50 self-end cursor-pointer border text-primary-pink hover:bg-primary-pink/85 hover:text-white transition duration-200">
         <Translator path="main.contact.send" />
       </button>
     </form>
