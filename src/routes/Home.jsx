@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaGithub, FaLaptopCode, FaLinkedin } from "react-icons/fa6";
+import { FaGithub, FaLaptopCode, FaLinkedin, FaBars, FaXmark } from "react-icons/fa6";
 import headerLogoImg from "../assets/header-logo.png";
 import ContactForm from "../components/ContactForm";
 import T from "../components/i18n/Translator";
@@ -10,6 +10,7 @@ import MagnetLines from "../components/MagnetLines";
 
 export default function Home() {
   const [selectedLink, setSelectedLink] = useState("home");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const tapeContent = [
     <T key="webDevelopment" path="main.footer.webDevelopment" />,
@@ -22,12 +23,32 @@ export default function Home() {
 
   const handleClick = (link) => {
     setSelectedLink(link);
+    setIsMenuOpen(false);
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
     <>
-      <header className="bg-primary-white dark:bg-primary-black dark:text-primary-white w-full fixed top-0 z-10 flex items-center justify-between md:px-80 py-4 drop-shadow-lg overflow-x-hidden">
+      <header className="bg-primary-white dark:bg-primary-black dark:text-primary-white w-full fixed top-0 z-10 flex items-center justify-between px-5 md:px-80 py-4 drop-shadow-lg overflow-x-hidden">
         <img src={headerLogoImg} alt="logo Kauê Henrick" className="h-9" />
+
+        <div className="md:hidden flex items-center gap-10">
+          <div className="flex gap-5">
+            <LanguageToggle />
+            <ThemeToggle />
+          </div>
+
+          <button
+            className="z-30"
+            onClick={toggleMenu}
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          >
+            {isMenuOpen ? <FaXmark size={24} /> : <FaBars size={24} />}
+          </button>
+        </div>
 
         <div className="hidden md:flex gap-8">
           <nav>
@@ -49,11 +70,38 @@ export default function Home() {
             <ThemeToggle />
           </div>
         </div>
-      </header>
+
+        {isMenuOpen && (
+          <div
+            className="fixed md:hidden inset-0 bg-primary-white dark:bg-primary-black top-0 left-0 w-full h-full z-20 flex flex-col items-center justify-center"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <nav className="space-y-6 text-center">
+              {["home", "tools", "contact"].map((link) => (
+                <div
+                  key={link}
+                  className={`text-2xl ${selectedLink === link
+                    ? 'text-black dark:text-white'
+                    : 'text-gray-500 dark:text-gray-400'
+                    }`}
+                >
+                  <a
+                    href={`#${link}`}
+                    onClick={() => handleClick(link)}
+                    className="block py-4"
+                  >
+                    <T path={`header.${link}`} />
+                  </a>
+                </div>
+              ))}
+            </nav>
+          </div>
+        )}
+      </header >
 
       <main className="bg-secondary-white dark:bg-primary-black dark:text-primary-white overflow-x-hidden">
         <section id="home">
-          <div className="flex flex-col md:flex-row md:justify-between md:min-h-screen px-4 sm:px-10 md:px-20 max-w-7xl mx-auto">
+          <div className="flex flex-col max-sm:mt-5 md:flex-row md:justify-between md:min-h-screen px-4 sm:px-10 md:px-20 max-w-7xl mx-auto">
             <section className="space-y-10 w-full md:w-5/12 md:flex md:flex-col md:justify-center">
               <p className="text-xl md:text-2xl font-spacemono">&lt; <T path="main.hello" /> /&gt;</p>
 
