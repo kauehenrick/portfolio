@@ -9,7 +9,7 @@ import ToolsIconSection from "../components/ToolsIconSection";
 import MagnetLines from "../components/MagnetLines";
 
 export default function Home() {
-  const [selectedLink, setSelectedLink] = useState("inicio");
+  const [selectedLink, setSelectedLink] = useState("home");
 
   const tapeContent = [
     <T key="webDevelopment" path="main.footer.webDevelopment" />,
@@ -53,46 +53,64 @@ export default function Home() {
 
       <main className="bg-secondary-white dark:bg-primary-black dark:text-primary-white overflow-x-hidden">
         <section id="home">
-          <div className="flex flex-col md:flex-row justify-between min-h-screen">
-            <section className="space-y-10 mx-5 md:w-5/12 md:mt-45 md:pl-80">
-              <p className="text-2xl font-spacemono">&lt; <T path="main.hello" /> /&gt;</p>
+          <div className="flex flex-col md:flex-row md:justify-between min-h-screen px-4 sm:px-10 md:px-20 max-w-7xl mx-auto">
+            <section className="space-y-10 w-full md:w-5/12 md:flex md:flex-col md:justify-center">
+              <p className="text-xl md:text-2xl font-spacemono">&lt; <T path="main.hello" /> /&gt;</p>
 
               <div className="space-y-4">
-                <p className="font-bold text-4xl"> <T path="main.greetings" /> <br /> <span className="text-primary-pink"> <T path="main.title" /> </span></p>
-                <p> <T path="main.description" /> </p>
+                <p className="font-bold text-3xl md:text-4xl">
+                  <T path="main.greetings" /> <br />
+                  <span className="text-primary-pink"> <T path="main.title" /> </span>
+                </p>
+                <p className="text-base md:text-lg"> <T path="main.description" /> </p>
 
-                <div className="flex gap-7">
-                  <a href="https://github.com/kauehenrick" target="blank" className="flex items-center gap-2 font-medium">
+                <div className="flex gap-5 md:gap-7">
+                  <a
+                    href="https://github.com/kauehenrick"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 font-medium hover:text-primary-pink transition-colors"
+                  >
                     <FaGithub size="20px" />
                     <p>Github</p>
                   </a>
-                  <a href="https://www.linkedin.com/in/kauehenrick/" target="blank" className="flex items-center gap-2 font-medium">
+                  <a
+                    href="https://www.linkedin.com/in/kauehenrick/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 font-medium hover:text-primary-pink transition-colors"
+                  >
                     <FaLinkedin size="20px" />
                     <p>LinkedIn</p>
                   </a>
                 </div>
               </div>
 
-              <a href="#contato" className="bg-primary-pink hover:bg-primary-pink/85 text-white transition duration-200 rounded-sm flex items-center justify-center gap-3 text-sm font-semibold px-4 py-2 w-50 cursor-pointer" onClick={() => handleClick('contato')}>
+              <a
+                href="#contact"
+                className="bg-primary-pink hover:bg-primary-pink/85 text-white transition duration-200 rounded-sm flex items-center justify-center gap-3 text-sm font-semibold px-4 py-2 w-full md:w-auto self-start"
+                onClick={() => handleClick('contact')}
+              >
                 <p> <T path="main.button" /> </p>
                 <FaLaptopCode size="20px" />
               </a>
             </section>
 
-            <MagnetLines
-              rows={9}
-              columns={9}
-              containerSize="60vmin"
-              lineColor="#EF476F"
-              lineWidth="0.8vmin"
-              lineHeight="5vmin"
-              baseAngle={0}
-              style={{ margin: "auto" }}
-            />
+            <div className="flex items-center justify-center w-full md:w-1/2 mt-10 md:mt-0">
+              <MagnetLines
+                rows={9}
+                columns={9}
+                containerSize="60vmin"
+                lineColor="#EF476F"
+                lineWidth="0.8vmin"
+                lineHeight="5vmin"
+                baseAngle={0}
+              />
+            </div>
           </div>
 
           <footer className="bg-primary-pink flex h-13 w-full absolute bottom-0 overflow-hidden">
-            <div className="relative flex whitespace-nowrap">
+            <div className="relative flex whitespace-nowrap w-full">
               <div className="animate-marquee-continuous inline-flex items-center gap-4">
                 {Array.from({ length: 10 }, (_, outerIndex) => (
                   <React.Fragment key={outerIndex}>
@@ -108,19 +126,23 @@ export default function Home() {
           </footer>
         </section>
 
-        <section id="tools" className="flex flex-col md:flex-row justify-between py-20 px-5 gap-10">
-          <div className="md:w-5/12">
-            <h2 className="font-extrabold text-4xl mb-5"> <T path="main.tools.title1" /> <span className="text-primary-pink"> <T path="main.tools.title2" /> </span></h2>
-            <li> <T path="main.tools.list.frontend" /> </li>
-            <li> <T path="main.tools.list.backend" /> </li>
-            <li> <T path="main.tools.list.design" /> </li>
-            <li> <T path="main.tools.list.database" /> </li>
+        <section id="tools" className="flex flex-col md:flex-row justify-between py-20 px-4 sm:px-10 md:px-20 gap-10 max-w-7xl mx-auto">
+          <div className="w-full md:w-5/12">
+            <h2 className="font-extrabold text-2xl md:text-3xl lg:text-4xl mb-5">
+              <T path="main.tools.title1" /> <span className="text-primary-pink"> <T path="main.tools.title2" /> </span>
+            </h2>
+            <div className="space-y-2">
+              <li> <T path="main.tools.list.frontend" /> </li>
+              <li> <T path="main.tools.list.backend" /> </li>
+              <li> <T path="main.tools.list.design" /> </li>
+              <li> <T path="main.tools.list.database" /> </li>
+            </div>
           </div>
 
           <ToolsIconSection />
         </section>
 
-        <section id="contact" className="flex flex-col md:flex-row justify-between pb-20 px-5 gap-10">
+        <section id="contact" className="flex flex-col md:flex-row justify-between pb-20 px-4 sm:px-10 md:px-20 gap-10 max-w-7xl mx-auto">
           <div className="space-y-8">
             <h2 className="font-extrabold text-4xl mb-5"> <T path="main.contact.title1" /> <span className="text-primary-pink"> <T path="main.contact.title2" /> </span></h2>
             <p> <T path="main.contact.description1" /> <br /> <T path="main.contact.description2" /> </p>
