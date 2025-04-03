@@ -4,11 +4,8 @@ This is my personal portfolio, where I showcase my projects, skills, and contact
 
 ## 🛠 Technologies Used
 
-- **Next.js** - React framework for modern applications  
 - **React** - Library for building user interfaces  
 - **Tailwind CSS** - Fast and responsive styling  
-- **TypeScript** - Static typing for JavaScript  
-- **Vercel** - Hosting for continuous deployment
 
 ## 📌 Features
 - Display of information about me and my professional journey
