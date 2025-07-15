@@ -187,7 +187,7 @@ export default function Home() {
           </footer>
         </section>
 
-        <section id="tools" className="flex flex-col md:flex-row justify-between py-30 px-10 sm:px-10 md:px-20 gap-10 max-w-7xl mx-auto">
+        <section id="tools" className="flex flex-col md:flex-row justify-between py-30 max-sm:pb-20 max-sm:py-12 px-10 md:px-20 gap-10 max-w-7xl mx-auto">
           <div className="w-full md:w-5/12">
             <h2 className="font-extrabold text-2xl md:text-3xl lg:text-4xl mb-5">
               <T path="main.tools.title1" /> <span className="text-primary-pink"> <T path="main.tools.title2" /> </span>
