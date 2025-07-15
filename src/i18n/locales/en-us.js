@@ -8,7 +8,8 @@ export default {
     },
     main: {
       hello: "Hello, world!",
-      greetings: "Hi, my name is Kauê Henrick",
+      greetings: "Hi, my name is",
+      name: "Kauê Weber",
       title: "Web Developer",
       description: "Specialized in creating attractive and efficient pages, delivering the best user experience.",
       button: "Get in touch",

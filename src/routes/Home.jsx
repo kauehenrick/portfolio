@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-import { FaGithub, FaLaptopCode, FaLinkedin, FaBars, FaXmark } from "react-icons/fa6";
-import headerLogoImg from "../assets/header-logo.png";
+import { FaBars, FaGithub, FaLaptopCode, FaLinkedin, FaXmark } from "react-icons/fa6";
+import headerLogoImg from "../assets/header-logo.webp";
+import kaueWeberImg from "../assets/kaue-weber-image.webp";
+import reactLogoImg from "../assets/react-logo.webp";
 import ContactForm from "../components/ContactForm";
 import T from "../components/i18n/Translator";
 import LanguageToggle from "../components/LanguageToggle";
 import ThemeToggle from "../components/ThemeToggle";
 import ToolsIconSection from "../components/ToolsIconSection";
-import MagnetLines from "../components/MagnetLines";
+import vscodeLogoImg from "../assets/vscode-logo.webp";
 
 export default function Home() {
   const [selectedLink, setSelectedLink] = useState("home");
@@ -33,7 +35,7 @@ export default function Home() {
   return (
     <>
       <header className="bg-primary-white dark:bg-primary-black dark:text-primary-white w-full fixed top-0 z-10 flex items-center justify-between px-5 md:px-80 py-4 drop-shadow-lg overflow-x-hidden">
-        <img src={headerLogoImg} alt="logo Kauê Henrick" className="h-9" />
+        <img src={headerLogoImg} alt="logo Kauê Henrick" className="h-11 in-dark:invert" />
 
         <div className="md:hidden flex items-center gap-10">
           <div className="flex gap-5">
@@ -106,11 +108,12 @@ export default function Home() {
               <p className="text-xl md:text-2xl font-spacemono">&lt; <T path="main.hello" /> /&gt;</p>
 
               <div className="space-y-4">
-                <p className="font-bold text-3xl md:text-4xl">
+                <p className="flex flex-col gap-3 font-bold text-3xl md:text-4xl leading-12">
                   <T path="main.greetings" /> <br />
+                  <T path="main.name" />
                   <span className="text-primary-pink"> <T path="main.title" /> </span>
                 </p>
-                <p className="text-base md:text-lg"> <T path="main.description" /> </p>
+                <p className="text-base md:text-lg leading-8"> <T path="main.description" /> </p>
 
                 <div className="flex gap-5 md:gap-7">
                   <a
@@ -123,7 +126,7 @@ export default function Home() {
                     <p>Github</p>
                   </a>
                   <a
-                    href="https://www.linkedin.com/in/kauehenrick/"
+                    href="https://www.linkedin.com/in/kaueweber/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 font-medium hover:text-primary-pink transition-colors"
@@ -144,15 +147,25 @@ export default function Home() {
               </a>
             </section>
 
-            <div className="flex items-center justify-center w-full md:w-1/2 mt-10 md:mt-0">
-              <MagnetLines
-                rows={9}
-                columns={9}
-                containerSize="60vmin"
-                lineColor="#EF476F"
-                lineWidth="0.8vmin"
-                lineHeight="5vmin"
-                baseAngle={0}
+            <div className="flex items-center justify-center w-full md:w-1/2 mt-10 md:mt-0 relative">
+              <img className="rounded-r-lg h-3/4" src={kaueWeberImg} alt="imagem do programador (Kauê Weber)" />
+              <img
+                className="absolute w-24 md:w-32 lg:w-40 animate-float transform -translate-x-1/2 -translate-y-1/2"
+                style={{
+                  top: 'calc(20% + 2rem)',
+                  left: 'calc(40% - 8rem)'
+                }}
+                src={reactLogoImg}
+                alt=""
+              />
+              <img
+                className="absolute w-24 md:w-32 lg:w-30 animate-float transform translate-x-1/2 translate-y-1/2"
+                style={{
+                  bottom: 'calc(20% + 2rem)',
+                  right: 'calc(20% - 10rem)'
+                }}
+                src={vscodeLogoImg}
+                alt=""
               />
             </div>
           </div>
@@ -174,12 +187,12 @@ export default function Home() {
           </footer>
         </section>
 
-        <section id="tools" className="flex flex-col md:flex-row justify-between py-20 px-4 sm:px-10 md:px-20 gap-10 max-w-7xl mx-auto">
+        <section id="tools" className="flex flex-col md:flex-row justify-between py-30 px-10 sm:px-10 md:px-20 gap-10 max-w-7xl mx-auto">
           <div className="w-full md:w-5/12">
             <h2 className="font-extrabold text-2xl md:text-3xl lg:text-4xl mb-5">
               <T path="main.tools.title1" /> <span className="text-primary-pink"> <T path="main.tools.title2" /> </span>
             </h2>
-            <div className="space-y-2">
+            <div className="space-y-2 leading-8">
               <li> <T path="main.tools.list.frontend" /> </li>
               <li> <T path="main.tools.list.backend" /> </li>
               <li> <T path="main.tools.list.design" /> </li>
@@ -193,7 +206,7 @@ export default function Home() {
         <section id="contact" className="flex flex-col md:flex-row justify-between pb-20 px-4 sm:px-10 md:px-20 gap-10 max-w-7xl mx-auto">
           <div className="space-y-8">
             <h2 className="font-extrabold text-4xl mb-5"> <T path="main.contact.title1" /> <span className="text-primary-pink"> <T path="main.contact.title2" /> </span></h2>
-            <p> <T path="main.contact.description1" /> <br /> <T path="main.contact.description2" /> </p>
+            <p className="leading-8"> <T path="main.contact.description1" /> <br /> <T path="main.contact.description2" /> </p>
 
             <div>
               <p className="font-bold text-xl mb-3"> <T path="main.contact.myNumber" /> </p>

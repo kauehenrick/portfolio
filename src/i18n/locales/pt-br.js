@@ -8,7 +8,8 @@ export default {
     },
     main: {
       hello: "Olá, mundo!",
-      greetings: "Olá, meu nome é Kauê Henrick",
+      greetings: "Olá, meu nome é",
+      name: "Kauê Weber",
       title: "Desenvolvedor Web",
       description: "Especializado em criar páginas atraentes e eficientes, proporcionando a melhor experiência para o usuário final.",
       button: "Entre em contato",
