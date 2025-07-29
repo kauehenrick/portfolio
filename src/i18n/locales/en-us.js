@@ -35,6 +35,16 @@ export default {
         title1: "Featured",
         title2: "Projects",
         description: "Real examples of how my work can help you achieve your goals.",
+        button: "See more",
+        list: {
+          project1: {
+            title: "UI Design – BitPDV",
+            subtitle: "New screens for an ERP",
+            description: "UI project for an ERP system, specifically for the point of sale and some of its functions.",
+            tools: ["Figma", "Adobe Photoshop", "UI/UX"],
+            seeMoreLink: "https://drive.google.com/file/d/1iypcRx72r7b0vFUmz5mf8wAJplISrBjX/view?usp=drive_link",
+          },
+        },
       },
 
       contact: {

@@ -9,6 +9,7 @@ import LanguageToggle from "../components/LanguageToggle";
 import ThemeToggle from "../components/ThemeToggle";
 import ToolsIconSection from "../components/ToolsIconSection";
 import vscodeLogoImg from "../assets/vscode-logo.webp";
+import ProjectsSection from "../components/ProjectsSection";
 
 export default function Home() {
   const [selectedLink, setSelectedLink] = useState("home");
@@ -55,7 +56,7 @@ export default function Home() {
         <div className="hidden md:flex gap-8">
           <nav>
             <ul className="flex gap-5 text-sm md:text-base">
-              {["home", "tools", "contact"].map((link) => (
+              {["home", "tools", "projects", "contact"].map((link) => (
                 <li key={link} className={`relative hover:text-black dark:hover:text-white transition-colors ${selectedLink === link ? 'dark:text-primary-white' : 'text-gray-400'}`}>
                   <a href={`#${link}`} onClick={() => handleClick(link)}>
                     <T path={`header.${link}`} />
@@ -101,7 +102,7 @@ export default function Home() {
         )}
       </header >
 
-      <main className="bg-secondary-white dark:bg-primary-black dark:text-primary-white overflow-x-hidden">
+      <main className="bg-primary-white dark:bg-primary-black dark:text-primary-white overflow-x-hidden">
         <section id="home">
           <div className="flex flex-col max-sm:mt-5 md:flex-row md:justify-between md:min-h-screen px-4 sm:px-10 md:px-20 max-w-7xl mx-auto">
             <section className="space-y-10 w-full md:w-5/12 md:flex md:flex-col md:justify-center">
@@ -187,7 +188,7 @@ export default function Home() {
           </footer>
         </section>
 
-        <section id="tools" className="flex flex-col md:flex-row justify-between py-30 max-sm:pb-20 max-sm:py-12 px-10 md:px-20 gap-10 max-w-7xl mx-auto">
+        <section id="tools" className="bg-secondary-white dark:bg-secondary-black flex flex-col md:flex-row justify-center py-30 px-4 max-sm:pb-20 max-sm:py-12 md:px-80 gap-10">
           <div className="w-full md:w-5/12">
             <h2 className="font-extrabold text-2xl md:text-3xl lg:text-4xl mb-5">
               <T path="main.tools.title1" /> <span className="text-primary-pink"> <T path="main.tools.title2" /> </span>
@@ -203,7 +204,11 @@ export default function Home() {
           <ToolsIconSection />
         </section>
 
-        <section id="contact" className="flex flex-col md:flex-row justify-between pb-20 px-4 sm:px-10 md:px-20 gap-10 max-w-7xl mx-auto">
+        <section id="projects">
+          <ProjectsSection />
+        </section>
+
+        <section id="contact" className="bg-secondary-white dark:bg-secondary-black flex flex-col md:flex-row py-30 px-4 sm:px-10 md:px-80 gap-10">
           <div className="space-y-8">
             <h2 className="font-extrabold text-4xl mb-5"> <T path="main.contact.title1" /> <span className="text-primary-pink"> <T path="main.contact.title2" /> </span></h2>
             <p className="leading-8"> <T path="main.contact.description1" /> <br /> <T path="main.contact.description2" /> </p>

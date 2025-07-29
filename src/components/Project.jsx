@@ -1,42 +1,60 @@
 import { FaArrowRight, FaGithub } from "react-icons/fa6";
+import { useTranslation } from "react-i18next";
 
 import PropTypes from 'prop-types';
 
 export default function Project({ ProjectTitle, ProjectSubtitle, ProjectDescription, ProjectImage, ProjectRow, ProjectTools, SeeMoreLink, GithubLink }) {
+  const { t } = useTranslation();
+
   return (
-    <section className={`flex ${ProjectRow} rounded-lg p-5 drop-shadow-lg gap-2 w-full`}>
+    <section className={`flex flex-col md:${ProjectRow} rounded-lg p-5 drop-shadow-lg gap-2 w-full`}>
+      <img
+        src={ProjectImage}
+        alt="Imagem referente ao projeto"
+        className="border-[0.25px] border-gray-300/10 rounded-lg object-cover w-96 h-auto"
+      />
 
-      <img src={ProjectImage} alt="Imagem referente ao projeto" className='border-[0.25px] border-gray-300/10 rounded-lg object-cover w-96' />
+      <main className="flex flex-col justify-between h-[auto] min-h-full border-[0.25px] border-secondary-black/30 dark:border-gray-300/10 rounded-lg px-5 py-3 w-full">
+        <div>
+          <p className="text-xl font-semibold">{ProjectTitle}</p>
+          <p className="text-sm mt-2 mb-4">{ProjectSubtitle}</p>
+          <p className="text-xs">{ProjectDescription}</p>
 
-      <main className='flex flex-col gap-2 border-[0.25px] border-gray-300/10 rounded-lg px-5 py-3'>
-        <p className='text-lg font-semibold'>{ProjectTitle}</p>
-        <p className='text-sm'>{ProjectSubtitle}</p>
-        <p className='text-xs'>{ProjectDescription}</p>
-
-        <div className='flex gap-2'>
-          {ProjectTools.map((skill => {
-            return (
-              <div key={skill} className="bg-primary-pink flex justify-center items-center rounded-xl py-1 px-2 text-[10px]">
-                <p><span>&lt;/&gt;</span> {skill}</p>
+          <div className="flex gap-2 mt-3 flex-wrap">
+            {ProjectTools.map((skill) => (
+              <div
+                key={skill}
+                className="bg-primary-pink flex justify-center items-center rounded-xl py-1 px-2 text-[10px]"
+              >
+                <p>
+                  <span>&lt;/&gt;</span> {skill}
+                </p>
               </div>
-            )
-          }))}
+            ))}
+          </div>
         </div>
 
-        <footer className="flex flex-row-reverse justify-between items-center text-sm mt-11">
-          {SeeMoreLink
-            ? <a className="flex items-center gap-2 cursor-pointer" href={SeeMoreLink} target="blank">
-              <p>Ver mais</p>
+        <footer className="flex flex-row-reverse justify-between items-center text-sm mt-auto pt-2">
+          {SeeMoreLink && (
+            <a
+              className="flex items-center gap-2 cursor-pointer"
+              href={SeeMoreLink}
+              target="blank"
+            >
+              <p>{t("main.projects.button")}</p>
               <FaArrowRight />
             </a>
-            : null}
-
-          {GithubLink
-            ? <a className="flex items-center gap-2 cursor-pointer" href={GithubLink} target="blank">
+          )}
+          {GithubLink && (
+            <a
+              className="flex items-center gap-2 cursor-pointer"
+              href={GithubLink}
+              target="blank"
+            >
               <FaGithub />
               <p>Github</p>
             </a>
-            : null}
+          )}
         </footer>
       </main>
     </section>
