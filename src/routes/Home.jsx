@@ -100,11 +100,11 @@ export default function Home() {
             <ul className="flex font-light text-sm gap-3">
               <li className="flex items-center gap-1.5">
                 <PiGithubLogo className="font-normal text-base" />
-                <p>Github</p>
+                <a href="https://github.com/kauehenrick" target="blank"><p>Github</p></a>
               </li>
               <li className="flex items-center gap-1.5">
                 <PiLinkedinLogo className="font-normal text-base" />
-                <p>LinkedIn</p>
+                <a href="https://www.linkedin.com/in/kaueweber/" target="blank"><p>LinkedIn</p></a>
               </li>
             </ul>
           </div>
