@@ -84,8 +84,8 @@ export default function Home() {
         )}
       </header >*/}
 
-      <main className="w-168 mx-auto">
-        <section className="flex w-full justify-between py-12.5" id="home">
+      <main className="md:w-168 mx-5 md:mx-auto">
+        <section className="flex flex-col md:flex-row justify-between py-12.5 gap-5" id="home">
           <div className="flex flex-col gap-6">
             <img src={headerLogoImg} className="w-25 h-12.25 in-dark:invert" alt="" />
 
@@ -109,7 +109,7 @@ export default function Home() {
             </ul>
           </div>
 
-          <img src={kaueWeberImg} className="w-54.75 rounded-r" alt="" />
+          <img src={kaueWeberImg} className="md:w-54.75 rounded-b md:rounded-r" alt="" />
         </section>
 
         <section className="pb-20" id="services">
@@ -145,9 +145,9 @@ export default function Home() {
           <ProjectsSection />
         </section>
 
-        <section className="flex pb-12.5 gap-20" id="contact">
+        <section className="flex flex-col md:flex-row pb-12.5 gap-10 md:gap-20" id="contact">
           <div className="flex flex-col gap-6">
-            <h2 className="text-2.5xl max-w-52">Vamos trabalhar juntos?</h2>
+            <h2 className="text-2.5xl md:max-w-52">Vamos trabalhar juntos?</h2>
 
             <p>Quer saber mais sobre meu trabalho ou apenas bater um papo? Envie-me uma mensagem. <br /> Estou esperando seu contato!</p>
 
@@ -168,7 +168,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="bg-secondary-black flex items-center justify-between h-12.5 px-120 border-y-[0.1px] border-primary-gray">
+      <footer className="bg-secondary-black flex items-center justify-between px-6 h-12.5 md:px-120 border-y-[0.1px] border-primary-gray">
         <p className="font-light text-xs">© 2025 Kauê Weber.</p>
 
         <ul className="flex gap-1.5">

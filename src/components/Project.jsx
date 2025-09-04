@@ -7,14 +7,14 @@ export default function Project({ ProjectTitle, ProjectSubtitle, ProjectDescript
   const { t } = useTranslation();
 
   return (
-    <section className={`flex flex-col md:flex-row rounded-lg p-b drop-shadow-lg w-full`}>
+    <section className="flex flex-col md:flex-row gap-6 rounded-lg drop-shadow-lg w-full" >
       <img
         src={ProjectImage}
         alt="Imagem referente ao projeto"
-        className="border-[0.25px] border-gray-300/10 rounded-lg object-cover w-75 h-auto"
+        className="border-[0.25px] border-gray-300/10 rounded-lg md:rounded-l-lg object-cover md:w-75 h-auto"
       />
 
-      <main className="flex flex-col justify-between h-[auto] min-h-full ml-6">
+      <main className="flex flex-col justify-between h-[auto] min-h-full">
         <div>
           <p className="text-xl font-semibold">{ProjectTitle}</p>
           <p className="text-xs font-light mt-2 mb-3 ">{ProjectSubtitle}</p>
