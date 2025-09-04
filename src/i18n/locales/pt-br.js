@@ -2,39 +2,30 @@ export default {
   translations: {
     header: {
       home: "Início",
+      services: "Serviços",
       tools: "Ferramentas",
       projects: "Projetos",
       contact: "Contato",
     },
     main: {
-      hello: "Olá, mundo!",
-      greetings: "Olá, meu nome é",
-      name: "Kauê Weber",
-      title: "Desenvolvedor Web",
+      title1: "Desenvolvedor Frontend",
+      title2: "Web Designer",
       description: "Especializado em criar páginas atraentes e eficientes, proporcionando a melhor experiência para o usuário final.",
-      button: "Entre em contato",
 
-      footer: {
-        webDevelopment: "Desenvolvimento Web",
-        uiux: "UI/UX",
-        frontendDevelopment: "Desenvolvimento Frontend",
+      services: {
+        title: "Serviços",
+        service1: "Sites e Landing Pages",
+        service2: "Flyers e Banners",
+        service3: "Identidade Visual",
       },
 
+
       tools: {
-        title1: "Minhas habilidades",
-        title2: "ao seu dispor",
-        list: {
-          frontend: "Desenvolvimento Frontend (ReactJS, TailwindCSS)",
-          backend: "Desenvolvimento Backend (NodeJS, TypeScript)",
-          design: "Design e Prototipação de Interfaces",
-          database: "Criação e manutenção de bancos de dados",
-        },
+        title: "Ferramentas",
       },
 
       projects: {
-        title1: "Projetos",
-        title2: "em destaque",
-        description: "Exemplos reais de como meu trabalho pode ajudar você a alcançar seus objetivos.",
+        title: "Projetos",
         button: "Ver mais",
         list: {
           project1: {
@@ -48,8 +39,7 @@ export default {
       },
 
       contact: {
-        title1: "Vamos trabalhar",
-        title2: "juntos?",
+        title: "Vamos trabalhar juntos?",
         description1: "Quer saber mais sobre meu trabalho ou apenas bater um papo? Envie-me uma mensagem.",
         description2: "Estou esperando seu contato!",
         myNumber: "Meu número:",

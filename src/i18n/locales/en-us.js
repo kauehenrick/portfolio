@@ -2,56 +2,45 @@ export default {
   translations: {
     header: {
       home: "Home",
+      services: "Services",
       tools: "Tools",
       projects: "Projects",
       contact: "Contact",
     },
     main: {
-      hello: "Hello, world!",
-      greetings: "Hi, my name is",
-      name: "Kauê Weber",
-      title: "Web Developer",
-      description: "Specialized in creating attractive and efficient pages, delivering the best user experience.",
-      button: "Get in touch",
+      title1: "Frontend Developer",
+      title2: "Web Designer",
+      description: "Specialized in creating attractive and efficient pages, providing the best experience for the end user.",
 
-      footer: {
-        webDevelopment: "Web Development",
-        uiux: "UI/UX",
-        frontendDevelopment: "Frontend Development",
+      services: {
+        title: "Services",
+        service1: "Websites and Landing Pages",
+        service2: "Flyers and Banners",
+        service3: "Visual Identity",
       },
 
       tools: {
-        title1: "My skills",
-        title2: "at your service",
-        list: {
-          frontend: "Frontend Development (ReactJS, TailwindCSS)",
-          backend: "Backend Development (NodeJS, TypeScript)",
-          design: "UI Design and Prototyping",
-          database: "Database creation and maintenance",
-        },
+        title: "Tools",
       },
 
       projects: {
-        title1: "Featured",
-        title2: "Projects",
-        description: "Real examples of how my work can help you achieve your goals.",
+        title: "Projects",
         button: "See more",
         list: {
           project1: {
-            title: "UI Design – BitPDV",
+            title: "Screen Design - BitPDV",
             subtitle: "New screens for an ERP",
             description: "UI project for an ERP system, specifically for the point of sale and some of its functions.",
             tools: ["Figma", "Adobe Photoshop", "UI/UX"],
             seeMoreLink: "https://drive.google.com/file/d/1iypcRx72r7b0vFUmz5mf8wAJplISrBjX/view?usp=drive_link",
           },
-        },
+        }
       },
 
       contact: {
-        title1: "Let's work",
-        title2: "together?",
-        description1: "Want to learn more about my work or just have a chat? Send me a message.",
-        description2: "I'm looking forward to hearing from you!",
+        title: "Shall we work together?",
+        description1: "Want to know more about my work or just have a chat? Send me a message.",
+        description2: "I’m waiting for your contact!",
         myNumber: "My number:",
         name: "Name:",
         email: "Email:",
