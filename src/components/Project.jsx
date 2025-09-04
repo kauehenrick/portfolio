@@ -3,11 +3,11 @@ import { useTranslation } from "react-i18next";
 
 import PropTypes from 'prop-types';
 
-export default function Project({ ProjectTitle, ProjectSubtitle, ProjectDescription, ProjectImage, ProjectRow, ProjectTools, SeeMoreLink, GithubLink }) {
+export default function Project({ ProjectTitle, ProjectSubtitle, ProjectDescription, ProjectImage, ProjectTools, SeeMoreLink, GithubLink }) {
   const { t } = useTranslation();
 
   return (
-    <section className={`flex flex-col md:${ProjectRow} rounded-lg p-b drop-shadow-lg gap-2 w-full`}>
+    <section className={`flex flex-col md:flex-row rounded-lg p-b drop-shadow-lg w-full`}>
       <img
         src={ProjectImage}
         alt="Imagem referente ao projeto"
@@ -66,7 +66,6 @@ Project.propTypes = {
   ProjectSubtitle: PropTypes.string.isRequired,
   ProjectDescription: PropTypes.string.isRequired,
   ProjectImage: PropTypes.string.isRequired,
-  ProjectRow: PropTypes.string,
   ProjectTools: PropTypes.arrayOf(PropTypes.string),
   SeeMoreLink: PropTypes.string,
   GithubLink: PropTypes.string,
@@ -77,7 +76,6 @@ Project.defaultProps = {
   ProjectSubtitle: "Lorem Ipsum",
   ProjectDescription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
   ProjectImage: "https://etzq49yfnmd.exactdn.com/wp-content/uploads/2022/03/cicero_gradient.png?strip=all&lossy=1&ssl=1",
-  ProjectRow: "flex-row",
   ProjectTools: [
     "Visual Studio Code",
     "Git",

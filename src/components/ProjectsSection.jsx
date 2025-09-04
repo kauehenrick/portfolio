@@ -9,7 +9,7 @@ export default function ProjectsSection() {
   const images = [imgProject1];
 
   return (
-    <section className="">
+    <section>
       {Object.values(projectList).map((proj, index) => (
         <Project
           key={index}
