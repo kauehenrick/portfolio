@@ -1,41 +1,23 @@
-import React, { useState } from "react";
-import { FaBars, FaGithub, FaLaptopCode, FaLinkedin, FaXmark } from "react-icons/fa6";
+//import { useState } from "react";
+import { PiEnvelope, PiGithubLogo, PiLinkedinLogo, PiPhone } from "react-icons/pi";
 import headerLogoImg from "../assets/header-logo.webp";
 import kaueWeberImg from "../assets/kaue-weber-image.webp";
-import reactLogoImg from "../assets/react-logo.webp";
 import ContactForm from "../components/ContactForm";
-import T from "../components/i18n/Translator";
-import LanguageToggle from "../components/LanguageToggle";
-import ThemeToggle from "../components/ThemeToggle";
-import ToolsIconSection from "../components/ToolsIconSection";
-import vscodeLogoImg from "../assets/vscode-logo.webp";
 import ProjectsSection from "../components/ProjectsSection";
+import ToolsIconSection from "../components/ToolsIconSection";
 
 export default function Home() {
-  const [selectedLink, setSelectedLink] = useState("home");
+  /*const [selectedLink, setSelectedLink] = useState("home");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const tapeContent = [
-    <T key="webDevelopment" path="main.footer.webDevelopment" />,
-    "|",
-    <T key="uiux" path="main.footer.uiux" />,
-    "|",
-    <T key="frontendDevelopment" path="main.footer.frontendDevelopment" />,
-    "|",
-  ];
 
   const handleClick = (link) => {
     setSelectedLink(link);
     setIsMenuOpen(false);
-  };
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  };*/
 
   return (
-    <>
-      <header className="bg-primary-white dark:bg-primary-black dark:text-primary-white w-full fixed top-0 z-10 flex items-center justify-between px-5 md:px-80 py-4 drop-shadow-lg overflow-x-hidden">
+    <div className="bg-primary-white text-primary-black dark:bg-primary-black dark:text-primary-white">
+      {/*<header className="bg-primary-white dark:bg-primary-black dark:text-primary-white w-full fixed top-0 z-10 flex items-center justify-between px-5 md:px-80 py-4 drop-shadow-lg overflow-x-hidden">
         <img src={headerLogoImg} alt="logo Kauê Henrick" className="h-11 in-dark:invert" />
 
         <div className="md:hidden flex items-center gap-10">
@@ -100,140 +82,100 @@ export default function Home() {
             </nav>
           </div>
         )}
-      </header >
+      </header >*/}
 
-      <main className="bg-primary-white dark:bg-primary-black dark:text-primary-white overflow-x-hidden">
-        <section id="home">
-          <div className="flex flex-col max-sm:mt-5 md:flex-row md:justify-between md:min-h-screen px-4 sm:px-10 md:px-20 max-w-7xl mx-auto">
-            <section className="space-y-10 w-full md:w-5/12 md:flex md:flex-col md:justify-center">
-              <p className="text-xl md:text-2xl font-spacemono">&lt; <T path="main.hello" /> /&gt;</p>
+      <main className="w-168 mx-auto">
+        <section className="flex w-full justify-between py-12.5" id="home">
+          <div className="flex flex-col gap-6">
+            <img src={headerLogoImg} className="w-25 h-12.25 in-dark:invert" alt="" />
 
-              <div className="space-y-4">
-                <p className="flex flex-col gap-3 font-bold text-3xl md:text-4xl leading-12">
-                  <T path="main.greetings" /> <br />
-                  <T path="main.name" />
-                  <span className="text-primary-pink"> <T path="main.title" /> </span>
-                </p>
-                <p className="text-base md:text-lg leading-8"> <T path="main.description" /> </p>
+            <ul className="flex gap-2 font-light text-sm">
+              <li>Desenvolvedor Frontend</li>
+              <li>-</li>
+              <li>Webdesigner</li>
+            </ul>
 
-                <div className="flex gap-5 md:gap-7">
-                  <a
-                    href="https://github.com/kauehenrick"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 font-medium hover:text-primary-pink transition-colors"
-                  >
-                    <FaGithub size="20px" />
-                    <p>Github</p>
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/kaueweber/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 font-medium hover:text-primary-pink transition-colors"
-                  >
-                    <FaLinkedin size="20px" />
-                    <p>LinkedIn</p>
-                  </a>
-                </div>
-              </div>
+            <p className="max-w-73.5">Especializado em criar páginas atraentes e eficientes, proporcionando a melhor experiência para o usuário final.</p>
 
-              <a
-                href="#contact"
-                className="bg-primary-pink hover:bg-primary-pink/85 text-white transition duration-200 rounded-sm flex items-center justify-center gap-3 text-sm font-semibold px-4 py-2 w-full md:w-auto self-start"
-                onClick={() => handleClick('contact')}
-              >
-                <p> <T path="main.button" /> </p>
-                <FaLaptopCode size="20px" />
-              </a>
-            </section>
-
-            <div className="flex items-center justify-center w-full md:w-1/2 mt-10 md:mt-0 relative">
-              <img className="rounded-r-lg h-3/4" src={kaueWeberImg} alt="imagem do programador (Kauê Weber)" />
-              <img
-                className="absolute w-24 md:w-32 lg:w-40 animate-float transform -translate-x-1/2 -translate-y-1/2"
-                style={{
-                  top: 'calc(20% + 2rem)',
-                  left: 'calc(40% - 8rem)'
-                }}
-                src={reactLogoImg}
-                alt=""
-              />
-              <img
-                className="absolute w-24 md:w-32 lg:w-30 animate-float transform translate-x-1/2 translate-y-1/2"
-                style={{
-                  bottom: 'calc(20% + 2rem)',
-                  right: 'calc(20% - 10rem)'
-                }}
-                src={vscodeLogoImg}
-                alt=""
-              />
-            </div>
+            <ul className="flex font-light text-sm gap-3">
+              <li className="flex items-center gap-1.5">
+                <PiGithubLogo className="font-normal text-base" />
+                <p>Github</p>
+              </li>
+              <li className="flex items-center gap-1.5">
+                <PiLinkedinLogo className="font-normal text-base" />
+                <p>LinkedIn</p>
+              </li>
+            </ul>
           </div>
 
-          <footer className="bg-primary-pink hidden md:flex h-13 w-full absolute bottom-0 overflow-hidden">
-            <div className="relative flex whitespace-nowrap w-full">
-              <div className="animate-marquee-continuous inline-flex items-center gap-4">
-                {Array.from({ length: 10 }, (_, outerIndex) => (
-                  <React.Fragment key={outerIndex}>
-                    {tapeContent.map((item, innerIndex) => (
-                      <span key={`${outerIndex}-${innerIndex}`} className="text-white font-medium">
-                        {item}
-                      </span>
-                    ))}
-                  </React.Fragment>
-                ))}
-              </div>
-            </div>
-          </footer>
+          <img src={kaueWeberImg} className="w-54.75 rounded-r" alt="" />
         </section>
 
-        <section id="tools" className="bg-secondary-white dark:bg-secondary-black flex flex-col md:flex-row justify-center py-30 px-4 max-sm:pb-20 max-sm:py-12 md:px-80 gap-10">
-          <div className="w-full md:w-5/12">
-            <h2 className="font-extrabold text-2xl md:text-3xl lg:text-4xl mb-5">
-              <T path="main.tools.title1" /> <span className="text-primary-pink"> <T path="main.tools.title2" /> </span>
-            </h2>
-            <div className="space-y-2 leading-8">
-              <li> <T path="main.tools.list.frontend" /> </li>
-              <li> <T path="main.tools.list.backend" /> </li>
-              <li> <T path="main.tools.list.design" /> </li>
-              <li> <T path="main.tools.list.database" /> </li>
-            </div>
-          </div>
+        <section className="pb-20" id="services">
+          <p className="text-2.5xl mb-6">Serviços</p>
+
+          <ul className="flex flex-col gap-3 text-lg">
+            <li>
+              <p className="mb-2.5">Sites e Landing Pages</p>
+              <hr />
+            </li>
+
+            <li>
+              <p className="mb-2.5">Flyers e Banners</p>
+              <hr />
+            </li>
+
+            <li>
+              <p className="mb-2.5">Identidade visual</p>
+              <hr />
+            </li>
+          </ul>
+        </section>
+
+        <section className="pb-20" id="tools">
+          <p className="text-2.5xl mb-6">Ferramentas</p>
 
           <ToolsIconSection />
         </section>
 
-        <section id="projects">
+        <section className="pb-20" id="projects">
+          <p className="text-2.5xl mb-6">Projetos</p>
+
           <ProjectsSection />
         </section>
 
-        <section id="contact" className="bg-secondary-white dark:bg-secondary-black flex flex-col md:flex-row py-30 px-4 sm:px-10 md:px-80 gap-10">
-          <div className="space-y-8">
-            <h2 className="font-extrabold text-4xl mb-5"> <T path="main.contact.title1" /> <span className="text-primary-pink"> <T path="main.contact.title2" /> </span></h2>
-            <p className="leading-8"> <T path="main.contact.description1" /> <br /> <T path="main.contact.description2" /> </p>
+        <section className="flex pb-12.5 gap-20" id="contact">
+          <div className="flex flex-col gap-6">
+            <h2 className="text-2.5xl max-w-52">Vamos trabalhar juntos?</h2>
 
-            <div>
-              <p className="font-bold text-xl mb-3"> <T path="main.contact.myNumber" /> </p>
-              <p>+55 77 99943-4338</p>
-            </div>
+            <p>Quer saber mais sobre meu trabalho ou apenas bater um papo? Envie-me uma mensagem. <br /> Estou esperando seu contato!</p>
 
-            <div>
-              <p className="font-bold text-xl mb-3">Email:</p>
-              <p>kauehenrick@proton.me</p>
-            </div>
+            <ul className="flex flex-col gap-4">
+              <li className="flex items-center gap-1.5">
+                <PiPhone />
+                <p className="font-light text-sm">+55 (77) 9 9943-4338</p>
+              </li>
+
+              <li className="flex items-center gap-1.5">
+                <PiEnvelope />
+                <p className="font-light text-sm">kauehenrick@proton.me</p>
+              </li>
+            </ul>
           </div>
 
           <ContactForm />
         </section>
       </main>
 
-      <footer className="bg-primary-pink flex flex-wrap items-center justify-center py-4 text-primary-white text-sm md:text-base">
-        <div className="flex flex-wrap justify-center gap-4 w-full">
-          <a href="https://github.com/kauehenrick" target="blank"><FaGithub size="20px" /></a>
-          <a href="https://www.linkedin.com/in/kauehenrick/" target="blank"><FaLinkedin size="20px" /></a>
-        </div>
+      <footer className="bg-secondary-black flex items-center justify-between h-12.5 px-120 border-y-[0.1px] border-primary-gray">
+        <p className="font-light text-xs">© 2025 Kauê Weber.</p>
+
+        <ul className="flex gap-1.5">
+          <li><a href="https://github.com/kauehenrick" target="blank"><PiGithubLogo size="1rem" /></a></li>
+          <li><a href="https://www.linkedin.com/in/kaueweber/" target="blank"><PiLinkedinLogo size="1rem" /></a></li>
+        </ul>
       </footer>
-    </>
+    </div>
   )
 }

@@ -7,41 +7,41 @@ export default function Project({ ProjectTitle, ProjectSubtitle, ProjectDescript
   const { t } = useTranslation();
 
   return (
-    <section className={`flex flex-col md:${ProjectRow} rounded-lg p-5 drop-shadow-lg gap-2 w-full`}>
+    <section className={`flex flex-col md:${ProjectRow} rounded-lg p-b drop-shadow-lg gap-2 w-full`}>
       <img
         src={ProjectImage}
         alt="Imagem referente ao projeto"
-        className="border-[0.25px] border-gray-300/10 rounded-lg object-cover w-96 h-auto"
+        className="border-[0.25px] border-gray-300/10 rounded-lg object-cover w-75 h-auto"
       />
 
-      <main className="flex flex-col justify-between h-[auto] min-h-full border-[0.25px] border-secondary-black/30 dark:border-gray-300/10 rounded-lg px-5 py-3 w-full">
+      <main className="flex flex-col justify-between h-[auto] min-h-full ml-6">
         <div>
           <p className="text-xl font-semibold">{ProjectTitle}</p>
-          <p className="text-sm mt-2 mb-4">{ProjectSubtitle}</p>
-          <p className="text-xs">{ProjectDescription}</p>
+          <p className="text-xs font-light mt-2 mb-3 ">{ProjectSubtitle}</p>
+          <p className="text-sm">{ProjectDescription}</p>
 
-          <div className="flex gap-2 mt-3 flex-wrap">
+          <div className="flex gap-3 mt-3 flex-wrap">
             {ProjectTools.map((skill) => (
               <div
                 key={skill}
-                className="bg-primary-pink flex justify-center items-center rounded-xl py-1 px-2 text-[10px]"
+                className="flex justify-center items-center text-[0.625rem] font-light"
               >
                 <p>
-                  <span>&lt;/&gt;</span> {skill}
+                  #{skill}
                 </p>
               </div>
             ))}
           </div>
         </div>
 
-        <footer className="flex flex-row-reverse justify-between items-center text-sm mt-auto pt-2">
+        <footer className="flex justify-between items-center text-sm mt-auto mb-2 pt-2">
           {SeeMoreLink && (
             <a
               className="flex items-center gap-2 cursor-pointer"
               href={SeeMoreLink}
               target="blank"
             >
-              <p>{t("main.projects.button")}</p>
+              <p className="font-light">{t("main.projects.button")}</p>
               <FaArrowRight />
             </a>
           )}

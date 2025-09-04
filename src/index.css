@@ -1,18 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-primary-pink: #ef476f;
-  --color-primary-black: #101010;
-  --color-secondary-black: #121212;
-  --color-primary-white: #f8f9fA;
-  --color-secondary-white: #F3f3f3;
+  --color-primary-black: #050514;
+  --color-secondary-black: #060612;
+  --color-primary-white: #F2F2F2;
   --color-primary-gray: #1d1c1f;
-  --color-gray-border: #d9d9d9;
   --font-spacemono: "Space Mono", monospace, Courier;
+  --text-2.5xl: 1.75rem;
 }
 
 * {
@@ -24,7 +22,7 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
   min-height: 100vh;
   display: flex;
   flex-flow: column nowrap;
@@ -38,19 +36,4 @@ body {
   to {
     transform: translateX(-50%);
   }
-}
-
-.animate-marquee-continuous {
-  min-width: 50%;
-  animation: marquee-continuous 25s linear infinite;
-}
-
-@keyframes float {
-  0% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(-20px); }
-  100% { transform: translateX(-50%) translateY(0); }
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
 }
