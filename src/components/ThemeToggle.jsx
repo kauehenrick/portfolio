@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { FaRegSun, FaRegMoon } from "react-icons/fa6";
+import { PiSun, PiMoon } from 'react-icons/pi';
 
 const ThemeToggle = () => {
   const [theme, setTheme] = useState(() => {
@@ -22,7 +22,7 @@ const ThemeToggle = () => {
       onClick={toggleTheme}
       className="cursor-pointer"
     >
-      {theme === 'dark' ? <FaRegSun size={14} /> : <FaRegMoon size={14} />}
+      {theme === 'dark' ? <PiSun size={14} /> : <PiMoon size={14} />}
     </button>
   );
 };
