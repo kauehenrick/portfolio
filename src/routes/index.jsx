@@ -1,3 +1,4 @@
+import { createFileRoute } from '@tanstack/react-router'
 import { useTranslation } from "react-i18next";
 import { PiEnvelope, PiGithubLogo, PiLinkedinLogo, PiPhone } from "react-icons/pi";
 import headerLogoImg from "../assets/header-logo.webp";
@@ -6,6 +7,10 @@ import ContactForm from "../components/ContactForm";
 import ProjectsSection from "../components/ProjectsSection";
 import ToolsIconSection from "../components/ToolsIconSection";
 import ThemeToggle from "../components/ThemeToggle";
+
+export const Route = createFileRoute('/')({
+  component: Home,
+})
 
 export default function Home() {
   const { t } = useTranslation();

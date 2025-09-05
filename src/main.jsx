@@ -1,15 +1,20 @@
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter, Routes, Route } from "react-router";
+import { StrictMode } from 'react'
 import './index.css'
 import { Toaster } from 'sonner';
-import Home from './routes/Home';
 import './i18n';
+import { RouterProvider, createRouter } from '@tanstack/react-router';
+import { routeTree } from './routeTree.gen'
+
+const router = createRouter({ routeTree })
+
 
 createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
+  <>
     <Toaster />
-    <Routes>
-      <Route path="/" element={<Home />} />
-    </Routes>
-  </BrowserRouter>
+    <StrictMode>
+      <RouterProvider router={router} />
+    </StrictMode>
+  </>
 )
+
