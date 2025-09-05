@@ -17,7 +17,7 @@ export default function Home() {
           <div className="flex flex-col gap-6">
             <img src={headerLogoImg} className="w-25 h-12.25 in-dark:invert" alt="" />
 
-            <ul className="flex gap-2 font-light text-sm">
+            <ul className="flex gap-2 dark:font-light text-sm">
               <li>{t("main.title1")}</li>
               <li>-</li>
               <li>{t("main.title2")}</li>
@@ -25,7 +25,7 @@ export default function Home() {
 
             <p className="max-w-73.5">{t("main.description")}</p>
 
-            <ul className="flex font-light text-sm gap-3">
+            <ul className="flex dark:font-light text-sm gap-3">
               <li className="flex items-center gap-1.5">
                 <PiGithubLogo className="font-normal text-base" />
                 <a href="https://github.com/kauehenrick" target="blank"><p>Github</p></a>
@@ -75,19 +75,19 @@ export default function Home() {
 
         <section className="flex flex-col md:flex-row pb-12.5 gap-10 md:gap-20" id="contact">
           <div className="flex flex-col gap-6">
-            <h2 className="text-2.5xl md:max-w-52"><p className="text-2.5xl mb-6">{t("main.contact.title")}</p></h2>
+            <h2 className="text-2.5xl md:max-w-52"><p className="text-2.5xl">{t("main.contact.title")}</p></h2>
 
             <p>{t("main.contact.description1")} <br /> {t("main.contact.description2")}</p>
 
             <ul className="flex flex-col gap-4">
               <li className="flex items-center gap-1.5">
                 <PiPhone />
-                <p className="font-light text-sm">+55 (77) 9 9943-4338</p>
+                <p className="dark:font-light text-sm">+55 (77) 9 9943-4338</p>
               </li>
 
               <li className="flex items-center gap-1.5">
                 <PiEnvelope />
-                <p className="font-light text-sm">kauehenrick@proton.me</p>
+                <p className="dark:font-light text-sm">kauehenrick@proton.me</p>
               </li>
             </ul>
           </div>
@@ -97,7 +97,7 @@ export default function Home() {
       </main>
 
       <footer className="dark:bg-secondary-black flex items-center justify-between px-6 h-12.5 md:px-120 border-y-[0.1px] border-primary-gray">
-        <p className="font-light text-xs">© 2025 Kauê Weber.</p>
+        <p className="darK:font-light text-xs">© 2025 Kauê Weber.</p>
 
         <div className="flex gap-10">
           <ThemeToggle />

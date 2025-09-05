@@ -17,14 +17,14 @@ export default function Project({ ProjectTitle, ProjectSubtitle, ProjectDescript
       <main className="flex flex-col justify-between h-[auto] min-h-full">
         <div>
           <p className="text-xl font-semibold">{ProjectTitle}</p>
-          <p className="text-xs font-light mt-2 mb-3 ">{ProjectSubtitle}</p>
+          <p className="text-xs dark:font-light mt-2 mb-3 ">{ProjectSubtitle}</p>
           <p className="text-sm">{ProjectDescription}</p>
 
           <div className="flex gap-3 mt-3 flex-wrap">
             {ProjectTools.map((skill) => (
               <div
                 key={skill}
-                className="flex justify-center items-center text-[0.625rem] font-light"
+                className="flex justify-center items-center text-[0.625rem] dark:font-light"
               >
                 <p>
                   #{skill}
@@ -41,7 +41,7 @@ export default function Project({ ProjectTitle, ProjectSubtitle, ProjectDescript
               href={SeeMoreLink}
               target="blank"
             >
-              <p className="font-light">{t("main.projects.button")}</p>
+              <p className="dark:font-light">{t("main.projects.button")}</p>
               <FaArrowRight />
             </a>
           )}

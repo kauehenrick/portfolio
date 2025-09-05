@@ -28,7 +28,7 @@ export default {
         button: "See more",
         list: {
           project1: {
-            title: "Screen Design - BitPDV",
+            title: "UI Design - BitPDV",
             subtitle: "New screens for an ERP",
             description: "UI project for an ERP system, specifically for the point of sale and some of its functions.",
             tools: ["Figma", "Adobe Photoshop", "UI/UX"],

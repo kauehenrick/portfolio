@@ -16,6 +16,7 @@ import tsLogoImg from "../assets/typescript.svg";
 import wpLogoImg from "../assets/wordpress.svg";
 import zodLogoImg from "../assets/zod.svg";
 import zustandLogoImg from "../assets/zustand.svg";
+import ToolItem from "./ToolItem";
 
 const toolsDesign = [
   { img: psLogoImg, name: "Photoshop" },
@@ -46,25 +47,21 @@ export default function ToolsIconSection() {
     <>
       <section className="flex flex-wrap gap-2 mb-7.5">
         {toolsDesign.map((tool, index) => (
-          <div
+          <ToolItem
             key={index}
-            className="flex items-center gap-2 px-3 py-1.5 border-[0.1px] border-primary-gray rounded w-fit"
-          >
-            <img src={tool.img} alt={`${tool.name} logo`} className="h-4" />
-            <p className="font-light text-sm">{tool.name}</p>
-          </div>
+            name={tool.name}
+            img={tool.img}
+          />
         ))}
       </section>
 
       <section className="flex flex-wrap gap-2">
         {toolsDev.map((tool, index) => (
-          <div
+          <ToolItem
             key={index}
-            className="flex items-center gap-2 px-3 py-1.5 border-[0.1px] border-primary-gray rounded w-fit"
-          >
-            <img src={tool.img} alt={`${tool.name} logo`} className="h-4" />
-            <p className="font-light text-sm">{tool.name}</p>
-          </div>
+            name={tool.name}
+            img={tool.img}
+          />
         ))}
       </section>
     </>
