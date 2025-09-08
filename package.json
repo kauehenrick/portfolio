@@ -1,53 +1,48 @@
 {
-  "name": "portfolio",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@emailjs/browser": "^4.4.1",
-    "@react-spring/web": "^9.7.5",
-    "@tailwindcss/vite": "^4.0.17",
-    "@tanstack/react-router": "^1.131.35",
-    "@tanstack/react-router-devtools": "^1.131.35",
-    "aos": "^2.3.4",
-    "esbuild": "^0.25.1",
-    "i18next": "^24.2.3",
-    "i18next-browser-languagedetector": "^8.0.4",
-    "ogl": "^1.0.11",
-    "prop-types": "^15.8.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-hook-form": "^7.54.2",
-    "react-i18next": "^15.4.1",
-    "react-icons": "^5.5.0",
-    "sonner": "^1.7.4"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.23.0",
-    "@eslint/plugin-kit": "^0.3.5",
-    "@tanstack/router-plugin": "^1.131.35",
-    "@types/react": "^18.3.20",
-    "@types/react-dom": "^18.3.5",
-    "@vitejs/plugin-react": "^4.3.4",
-    "brace-expansion": "^4.0.1",
-    "eslint": "^9.35.0",
-    "eslint-plugin-react": "^7.37.4",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
-    "globals": "^15.15.0",
-    "tailwindcss": "^4.0.17",
-    "vite": "^6.2.7"
-  },
-  "packageManager": "pnpm@10.15.1",
-  "pnpm": {
-    "ignoredBuiltDependencies": [
-      "esbuild"
-    ]
-  }
+	"name": "portfolio",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"lint": "biome lint .",
+		"format": "biome format . --write",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"@emailjs/browser": "^4.4.1",
+		"@react-spring/web": "^9.7.5",
+		"@tailwindcss/vite": "^4.0.17",
+		"@tanstack/react-router": "^1.131.35",
+		"@tanstack/react-router-devtools": "^1.131.35",
+		"aos": "^2.3.4",
+		"esbuild": "^0.25.1",
+		"i18next": "^24.2.3",
+		"i18next-browser-languagedetector": "^8.0.4",
+		"ogl": "^1.0.11",
+		"prop-types": "^15.8.1",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"react-hook-form": "^7.54.2",
+		"react-i18next": "^15.4.1",
+		"react-icons": "^5.5.0",
+		"sonner": "^1.7.4"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.2.3",
+		"@tanstack/router-plugin": "^1.131.35",
+		"@types/react": "^18.3.20",
+		"@types/react-dom": "^18.3.5",
+		"@vitejs/plugin-react": "^4.3.4",
+		"brace-expansion": "^4.0.1",
+		"tailwindcss": "^4.0.17",
+		"vite": "^6.2.7"
+	},
+	"packageManager": "pnpm@10.15.1",
+	"pnpm": {
+		"ignoredBuiltDependencies": [
+			"esbuild"
+		]
+	}
 }
