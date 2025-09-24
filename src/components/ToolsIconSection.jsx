@@ -1,7 +1,5 @@
-import elementorLogoImg from "../assets/elementor.svg";
 import figmaLogoImg from "../assets/figma.svg";
 import gitLogoImg from "../assets/git.svg";
-import illustratorLogoImg from "../assets/illustrator.svg";
 import jsLogoImg from "../assets/javascript.svg";
 import linuxLogoImg from "../assets/linux.svg";
 import mysqlLogoImg from "../assets/mysql.svg";
@@ -13,23 +11,16 @@ import reactjsLogoImg from "../assets/reactjs.svg";
 import shadcnuiLogoImg from "../assets/shadcnui.svg";
 import tailwindcssLogoImg from "../assets/tailwindcss.svg";
 import tsLogoImg from "../assets/typescript.svg";
-import wpLogoImg from "../assets/wordpress.svg";
 import zodLogoImg from "../assets/zod.svg";
 import zustandLogoImg from "../assets/zustand.svg";
 import ToolItem from "./ToolItem";
-
-const toolsDesign = [
-	{ img: psLogoImg, name: "Photoshop" },
-	{ img: figmaLogoImg, name: "Figma" },
-	{ img: wpLogoImg, name: "Wordpress" },
-	{ img: elementorLogoImg, name: "Elementor" },
-	{ img: illustratorLogoImg, name: "Illustrator" },
-];
+import nextjsLogoImg from "../assets/nextjs.svg";
 
 const toolsDev = [
 	{ img: jsLogoImg, name: "JavaScript" },
 	{ img: tsLogoImg, name: "TypeScript" },
 	{ img: reactjsLogoImg, name: "ReactJS" },
+	{ img: nextjsLogoImg, name: "NextJS" },
 	{ img: tailwindcssLogoImg, name: "TailwindCSS" },
 	{ img: shadcnuiLogoImg, name: "shadcn/ui" },
 	{ img: zustandLogoImg, name: "Zustand" },
@@ -40,22 +31,16 @@ const toolsDev = [
 	{ img: linuxLogoImg, name: "Linux" },
 	{ img: postgresqlLogoImg, name: "PostgreSQL" },
 	{ img: mysqlLogoImg, name: "MySQL" },
+	{ img: psLogoImg, name: "Photoshop" },
+	{ img: figmaLogoImg, name: "Figma" },
 ];
 
 export default function ToolsIconSection() {
 	return (
-		<>
-			<section className="flex flex-wrap gap-2 mb-7.5">
-				{toolsDesign.map((tool, index) => (
-					<ToolItem key={index} name={tool.name} img={tool.img} />
-				))}
-			</section>
-
-			<section className="flex flex-wrap gap-2">
-				{toolsDev.map((tool, index) => (
-					<ToolItem key={index} name={tool.name} img={tool.img} />
-				))}
-			</section>
-		</>
+		<section className="flex flex-wrap gap-2">
+			{toolsDev.map((tool, index) => (
+				<ToolItem key={index} name={tool.name} img={tool.img} />
+			))}
+		</section>
 	);
 }
