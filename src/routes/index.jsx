@@ -22,7 +22,7 @@ export default function Home() {
 
 	return (
 		<div className="bg-primary-white text-primary-black dark:bg-primary-black dark:text-primary-white">
-			<main className="md:w-168 mx-5 md:mx-auto">
+			<main className="md:w-2xl mx-5 md:mx-auto">
 				<section
 					className="flex flex-col md:flex-row justify-between py-12.5 gap-5"
 					id="home"
@@ -132,7 +132,7 @@ export default function Home() {
 			</main>
 
 			<footer className="dark:bg-secondary-black flex items-center justify-between px-6 h-12.5 md:px-120 border-y-[0.1px] border-primary-gray">
-				<p className="darK:font-light text-xs">© 2025 Kauê Weber.</p>
+				<p className="darK:font-light text-xs">© 2026 Kauê Weber.</p>
 
 				<div className="flex gap-10">
 					<ThemeToggle />
