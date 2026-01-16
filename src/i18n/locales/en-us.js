@@ -8,7 +8,7 @@ export default {
 			contact: "Contact",
 		},
 		main: {
-			title1: "Fullstack Developer focused on scalable products and business-critical systems",
+			title1: "Fullstack Developer",
 			description:
 				"I build and evolve web applications with a strong focus on architecture, performance, and maintainability. Experience delivering ERP systems, complex dashboards, data migrations, and robust backend integrations.",
 

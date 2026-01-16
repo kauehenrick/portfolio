@@ -9,7 +9,7 @@ export default {
 		},
 		main: {
 			title1:
-				"Desenvolvedor Fullstack focado em produtos escaláveis e sistemas críticos para o negócio",
+				"Desenvolvedor Fullstack",
 			description:
 				"Desenvolvo e evoluo aplicações web com forte foco em arquitetura, performance e manutenibilidade. Experiência na entrega de sistemas ERP, dashboards complexos, migrações de dados e integrações robustas de backend.",
 
