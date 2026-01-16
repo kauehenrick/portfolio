@@ -8,20 +8,24 @@ export default {
 			contact: "Contato",
 		},
 		main: {
-			title1: "Desenvolvedor Frontend",
-			title2: "Web Designer",
+			title1:
+				"Desenvolvedor Fullstack focado em produtos escaláveis e sistemas críticos para o negócio",
 			description:
-				"Especializado em criar páginas atraentes e eficientes, proporcionando a melhor experiência para o usuário final.",
+				"Desenvolvo e evoluo aplicações web com forte foco em arquitetura, performance e manutenibilidade. Experiência na entrega de sistemas ERP, dashboards complexos, migrações de dados e integrações robustas de backend.",
 
 			services: {
 				title: "Serviços",
-				service1: "Sites e Landing Pages",
-				service2: "Flyers e Banners",
-				service3: "Identidade Visual",
+				service1: "Aplicações Web e Sistemas Internos",
+				service2: "Interfaces de ERP e Fluxos de Negócio",
+				service3: "Arquitetura de Frontend (React, Next.js)",
+				service4: "APIs e Integrações de Backend (Node, NestJS)",
 			},
 
 			tools: {
 				title: "Ferramentas",
+				subtitle1: "Stack principal",
+				subtitle2: "Stack secundária",
+				subtitle3: "Ferramentas de apoio",
 			},
 
 			projects: {
@@ -29,10 +33,10 @@ export default {
 				button: "Ver mais",
 				list: {
 					project1: {
-						title: "Design de telas - BitPDV",
+						title: "UI Design - BitPDV",
 						subtitle: "Novas telas para um ERP",
 						description:
-							"Projeto UI para um sistema ERP, especificamente para o ponto de venda e algumas funções do mesmo.",
+							"Projeto de UI para um sistema ERP, com foco no ponto de venda e em algumas de suas funcionalidades.",
 						tools: ["Figma", "Adobe Photoshop", "UI/UX"],
 						seeMoreLink:
 							"https://drive.google.com/file/d/1iypcRx72r7b0vFUmz5mf8wAJplISrBjX/view?usp=drive_link",
@@ -41,10 +45,10 @@ export default {
 			},
 
 			contact: {
-				title: "Vamos trabalhar juntos?",
+				title: "Vamos construir algo sólido",
 				description1:
-					"Quer saber mais sobre meu trabalho ou apenas bater um papo? Envie-me uma mensagem.",
-				description2: "Estou esperando seu contato!",
+					"Se você procura alguém que entende tanto de produto quanto de código, vamos conversar.",
+				description2: "Estou aguardando seu contato!",
 				myNumber: "Meu número:",
 				name: "Nome:",
 				email: "E-mail:",

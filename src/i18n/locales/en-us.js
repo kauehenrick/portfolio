@@ -8,20 +8,23 @@ export default {
 			contact: "Contact",
 		},
 		main: {
-			title1: "Frontend Developer",
-			title2: "Web Designer",
+			title1: "Fullstack Developer focused on scalable products and business-critical systems",
 			description:
-				"Specialized in creating attractive and efficient pages, providing the best experience for the end user.",
+				"I build and evolve web applications with a strong focus on architecture, performance, and maintainability. Experience delivering ERP systems, complex dashboards, data migrations, and robust backend integrations.",
 
 			services: {
 				title: "Services",
-				service1: "Websites and Landing Pages",
-				service2: "Flyers and Banners",
-				service3: "Visual Identity",
+				service1: "Web Applications & Internal Systems",
+				service2: "ERP Interfaces and Business Workflows",
+				service3: "Frontend Architecture (React, Next.js)",
+				service4: "Backend APIs & Integrations (Node, NestJS)",
 			},
 
 			tools: {
 				title: "Tools",
+				subtitle1: "Main stack",
+				subtitle2: "Secondary stack",
+				subtitle3: "Support tools"
 			},
 
 			projects: {
@@ -41,9 +44,9 @@ export default {
 			},
 
 			contact: {
-				title: "Shall we work together?",
+				title: "Let’s build something solid",
 				description1:
-					"Want to know more about my work or just have a chat? Send me a message.",
+					"If you’re looking for someone who understands both product and code, let’s talk.",
 				description2: "I’m waiting for your contact!",
 				myNumber: "My number:",
 				name: "Name:",

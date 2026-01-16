@@ -34,10 +34,8 @@ export default function Home() {
 							alt=""
 						/>
 
-						<ul className="flex gap-2 dark:font-light text-sm">
+						<ul className="flex dark:font-light text-sm mr-2">
 							<li>{t("main.title1")}</li>
-							<li>-</li>
-							<li>{t("main.title2")}</li>
 						</ul>
 
 						<p className="max-w-73.5">{t("main.description")}</p>
@@ -60,7 +58,7 @@ export default function Home() {
 
 					<img
 						src={kaueWeberImg}
-						className="md:w-54.75 rounded-b md:rounded-r"
+						className="md:w-62 rounded-b md:rounded-r"
 						alt=""
 					/>
 				</section>
@@ -81,6 +79,10 @@ export default function Home() {
 
 						<li>
 							<p className="mb-2.5">{t("main.services.service3")}</p>
+							<hr />
+						</li>
+						<li>
+							<p className="mb-2.5">{t("main.services.service4")}</p>
 							<hr />
 						</li>
 					</ul>
@@ -117,7 +119,7 @@ export default function Home() {
 						<ul className="flex flex-col gap-4">
 							<li className="flex items-center gap-1.5">
 								<PiPhone />
-								<p className="dark:font-light text-sm">+55 (77) 9 9943-4338</p>
+								<p className="dark:font-light text-sm">+55 (77) 9 9119-9961</p>
 							</li>
 
 							<li className="flex items-center gap-1.5">
